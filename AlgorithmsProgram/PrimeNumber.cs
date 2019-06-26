@@ -8,6 +8,7 @@ namespace AlgorithmsProgram
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Diagnostics;
 
     /// <summary>
     /// PrimeNumber as class
@@ -21,10 +22,15 @@ namespace AlgorithmsProgram
         {
             try
             {
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
                 int number = 1000;
                 Console.WriteLine("\n...........................Extended Palindrome....................\n");
                 Utility.FindPrimeNumber(number);
-                Console.ReadLine();
+
+                sw.Stop();
+                Console.WriteLine("Time Taken For Execution-->{0} ", sw.ElapsedMilliseconds + " ms");
+
             }
             catch (Exception ex)
             {

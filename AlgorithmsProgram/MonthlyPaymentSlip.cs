@@ -8,6 +8,7 @@ namespace AlgorithmsProgram
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Diagnostics;
 
     /// <summary>
     /// MonthlyPaymentSlip as class
@@ -20,7 +21,10 @@ namespace AlgorithmsProgram
         public static void MonthlyPayment()
         {
             try
-            {       
+            {
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                Console.WriteLine("\n...........................Programme Of Monthly Payment ....................\n");
                 Console.WriteLine("Enter amount");
                 int amount = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("enter number of years");
@@ -28,7 +32,9 @@ namespace AlgorithmsProgram
                 Console.WriteLine("Enter rate of interest");
                 int rate = Convert.ToInt32(Console.ReadLine());
                 Utility.PaymentSlip(amount, year, rate);
-                Console.ReadLine();
+               
+                sw.Stop();
+                Console.WriteLine("Time Taken For Execution-->{0} ", sw.ElapsedMilliseconds);
             }
             catch (Exception ex)
             {

@@ -135,7 +135,7 @@ namespace AlgorithmsProgram
                 int reverse = 0, length = 0;
                 Boolean prime = true;
                 int[] prime_Array=new int[1000];
-                int compare, remainder;
+                int  remainder;
                 number = Convert.ToInt32(Console.ReadLine());                
                 if (number <= 0 )
                 {
@@ -150,7 +150,7 @@ namespace AlgorithmsProgram
                 /// <param name="number">prime_Array[j] as parameter</param>  
                 
                 Console.WriteLine("Prime numbers between 0 to "+ number +" are:");
-                for (int outerLoopCounter = 2; outerLoopCounter <= number / 2; outerLoopCounter++)
+                for (int outerLoopCounter = 2; outerLoopCounter <= number; outerLoopCounter++)
                 {
                     for (int innerLoopCounter = 2; innerLoopCounter <= outerLoopCounter / 2; innerLoopCounter++)
                     {
@@ -282,14 +282,216 @@ namespace AlgorithmsProgram
         /// </summary>
         /// <param name="array">array as parameter</param>
         /// <param name="input">input as parameter</param>
-        public static void BinarySearchForString(string[] array, string input)
+        public static int BinarySearchForString(string[] array, string input)
         {
-            array = new string[5];
-            for (int i = 0; i < array.Length; i++)
+            int start = 0, end = array.Length - 1;
+            int mid = 0, result = -1;
+
+            while (start <= end)
             {
-                array[i] = Console.ReadLine();
-                Console.WriteLine(array[i]);
+                mid = (start + end) / 2;
+                char[] stringCharArray = array[mid].ToCharArray();
+                char[] inputstringCharArray = input.ToCharArray();
+                if (stringCharArray[0] == inputstringCharArray[0])
+                {
+                    int no = checkStringEqual(array[mid], input);
+                    if ( no == 1) {
+                        result = mid;
+                        break;
+                    }
+                    
+                }
+                else if (inputstringCharArray[0] < stringCharArray[0])
+                {
+                    end = mid - 1;
+                }
+                else
+                {
+                    start = mid + 1;
+                }
             }
+           
+           
+            return result+1;
+        }
+        /// <summary>
+        /// checkStringEqual is a method to check input string is present or not
+        /// </summary>
+        /// <param name="arrayString">first paramerter is the string array element.</param>
+        /// <param name="inputString">second string parameter is the serch element.</param>
+        /// <returns></returns>
+        public static int checkStringEqual(string arrayString, string inputString)
+        {
+            int icnt = 0, Result = 0 ;
+            char[] arrayStringChar = arrayString.ToCharArray();
+            char[] inputStringChar = inputString.ToCharArray();
+
+            if (inputString.Length == arrayString.Length)
+            {
+                for (int i = 0; i < arrayString.Length; i++)
+                {
+                    if (arrayStringChar[i] != inputStringChar[i])
+                    {
+                        icnt++;
+                        break;
+                    }
+                }
+
+            }
+            else
+            {
+                Result = -1;
+
+            }
+            if (icnt == 0)
+            {
+                Result = 1;
+            }
+            return Result;
+        }
+        /// <summary>
+        /// BinarySearchForInteger as function
+        /// </summary>
+        /// <param name="array">array as parameter</param>
+        /// <param name="input">input as parameter</param>
+        public static int BinarySearchForInteger(int[] array, int input)
+        {
+            int start = 0, end = array.Length-1;
+            int mid = 0, result = -1 ;
+
+            while (start <= end) {
+                mid = (start + end) / 2;
+                if (array[mid] == input)
+                {
+                    result = mid;
+                    break;
+                }
+                else if (input < array[mid])
+                {
+                    end = mid - 1;
+                }
+                else {
+                    start = mid + 1;
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// InsertionSortForInteger as function
+        /// </summary>
+        /// <param name="array">array as parameter</param>
+        public static int[] InsertionSortForInteger(int[] array)
+        { 
+            int n = array.Length;
+            for (int i = 1; i < n; ++i)
+            {
+                int key = array[i];
+                int j = i - 1;
+
+                // Move elements of arr[0..i-1], 
+                // that are greater than key, 
+                // to one position ahead of 
+                // their current position 
+                while (j >= 0 && array[j] > key)
+                {
+                    array[j + 1] = array[j];
+                    j = j - 1;
+                }
+                array[j + 1] = key;
+            }
+            return array;
+        }
+
+        /// <summary>
+        /// InsertionSortForString as function
+        /// </summary>
+        /// <param name="array">array as parameter</param>
+        /// <param name="m_Searchinput">input as parameter</param>
+        public static string[] InsertionSortForString(string[] array)
+        {
+            for (int i = 0; i < array.Length-1; i++)
+            {
+                string firstString = array[i];
+                char[] stringToCharArray1 = firstString.ToCharArray();
+
+                for (int j = i; j < array.Length; j++)
+                {
+                    string temp = " ";
+                    string secondString = array[j];
+                    char[] stringToCharArray2 = secondString.ToCharArray();
+                    if (stringToCharArray1[0] >= stringToCharArray2[0])
+                    {
+                        temp = array[j];
+                        array[j] = array[i];
+                        array[i] = temp;
+                        stringToCharArray1 = temp.ToCharArray();
+                    }
+                }
+                /*    // Insert s[j] at its correct position 
+                    int j = i - 1;
+                    while (j >= 0 && temp.Length < array[j].Length)
+                    {
+                        array[j + 1] = array[j];
+                        j--;
+                    }
+                    array[j + 1] = temp;
+                */
+            }
+            return array;
+        }
+
+        /// <summary>
+        /// bubbleSortForInteger as function
+        /// </summary>
+        /// <param name="array">array as parameter</param>
+
+        public static int[] bubbleSortForInteger(int[] array)
+        {
+            //int[] sortArray;1
+            int temp = 0;
+            int length = array.Length;
+            //sortArray = new string[length];
+            for (int i = 0; i < length-1; i++)
+            {
+                for (int j = i+1; j < length; j++) {
+                    if(array[i] > array[j]) {
+                        temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+            return array;
+        }
+
+        /// <summary>
+        /// bubbleSortForString as function
+        /// </summary>
+        /// <param name="array">array as parameter</param>
+
+        public static string[] bubbleSortForString(string[] array)
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                string firstString = array[i];
+                char[] stringToCharArray1 = firstString.ToCharArray();
+
+                for (int j = i; j < array.Length; j++)
+                {
+                    string temp = " ";
+                    string secondString = array[j];
+                    char[] stringToCharArray2 = secondString.ToCharArray();
+                    if (stringToCharArray1[0] >= stringToCharArray2[0])
+                    {
+                        temp = array[j];
+                        array[j] = array[i];
+                        array[i] = temp;
+                        stringToCharArray1 = temp.ToCharArray();
+                    }
+                }
+            }
+            return array;
         }
 
         /// <summary>
@@ -318,54 +520,6 @@ namespace AlgorithmsProgram
             }
         }
 
-        /// <summary>
-        /// BubbleSortFunction as function
-        /// </summary>
-        public static void BubbleSortFunction()
-        {
-            try
-            {
-                int i = 0;
-                int temp;
-                int length = 0;
-                Console.WriteLine("Enter length of the array");
-                length = Convert.ToInt32(Console.ReadLine());
-                int[] arr = new int[length];
-                Console.WriteLine("Enter element into array");
-                for (i = 0; i < arr.Length; i++)
-                {
-                    arr[i] = int.Parse(Console.ReadLine());
-                }
-
-                int n = arr.Length;
-                for (i = 0; i < n - 1; i++)
-                {
-                    for (int j = 0; j < n - i - 1; j++)
-                    {
-                        if (arr[j] > arr[j + 1])
-                        {
-                            temp = arr[j];
-                            arr[j] = arr[j + 1];
-                            arr[j + 1] = temp;
-                        }
-                    }
-                }
-
-                Console.WriteLine("Sorted Array");
-                {
-                    n = arr.Length;
-                    for (i = 0; i < n; ++i)
-                    {
-                        Console.Write(arr[i] + " ");
-                        Console.WriteLine();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
 
         /// <summary>
         /// SortStringUsingInsertionSort as function
@@ -694,7 +848,7 @@ namespace AlgorithmsProgram
                 }
                 Console.WriteLine("Enter Search Element");
                     int search = int.Parse(Console.ReadLine());
-                    int low = 0;
+                    //int low = 0;
                 int min = 0;
                 int max = inputArray.Length - 1;
 

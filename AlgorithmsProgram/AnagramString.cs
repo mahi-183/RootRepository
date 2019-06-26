@@ -8,7 +8,7 @@ namespace AlgorithmsProgram
     using System;
     using System.Collections.Generic;
     using System.Text;
-
+    using System.Diagnostics;
     /// <summary>
     /// AnagramString as class
     /// </summary>
@@ -21,8 +21,11 @@ namespace AlgorithmsProgram
         {
             try
             {
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
                 string m_FirstString = "", m_SecondString = "";
 
+                Console.WriteLine("\n...........................Anagram Programme for String....................\n");
                 Console.WriteLine("Enter the fisrt string:");
                 m_FirstString = Convert.ToString(Console.ReadLine());
 
@@ -42,6 +45,9 @@ namespace AlgorithmsProgram
                 {
                     Console.WriteLine("Given string " + m_FirstString + " and " + m_SecondString + " are not Anagrame");
                 }
+
+                sw.Stop();
+                Console.WriteLine("Time Taken for Execution-->{0} ", sw.ElapsedMilliseconds + " ms");
             }
             catch (Exception ex)
             {

@@ -8,6 +8,7 @@ namespace AlgorithmsProgram
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Diagnostics;
 
     /// <summary>
     /// BubbleSortString as class
@@ -21,8 +22,13 @@ namespace AlgorithmsProgram
         {
             try
             {
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+
+                Console.WriteLine("\n...........................Bubble Sort for String by using IComaparable method....................\n");
                 Utility.BubbleSortForString();
-                Console.ReadLine();
+                sw.Stop();
+                Console.WriteLine("Time Taken For Execution-->{0} ", sw.ElapsedMilliseconds + " ms");
             }
             catch (Exception ex)
             {

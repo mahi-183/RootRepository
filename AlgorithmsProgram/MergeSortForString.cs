@@ -8,6 +8,7 @@ namespace AlgorithmsProgram
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Diagnostics;
 
     /// <summary>
     /// MergeSortForString as class
@@ -21,8 +22,13 @@ namespace AlgorithmsProgram
         {
             try
             {
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+
                 Utility.SortStringUsingMergeSort();
-                Console.ReadLine();
+
+                sw.Stop();
+                Console.WriteLine("Time Taken For Execution-->{0} ", sw.ElapsedMilliseconds);
             }
             catch (Exception ex)
             {

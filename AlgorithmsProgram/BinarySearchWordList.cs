@@ -9,6 +9,7 @@ namespace AlgorithmsProgram
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Diagnostics;
 
     /// <summary>
     /// BinarySearchWord_List as class
@@ -20,11 +21,24 @@ namespace AlgorithmsProgram
         /// </summary>
         public static void FindWord()
         {
-            string path = "C:/Users/admin/source/repos/AlgorithmsProgram/AlgorithmsProgram/wordList.txt";
-            Console.WriteLine(path);
-            Console.WriteLine("Enter search word");
-            string word = Convert.ToString(Console.ReadLine());
-            Utility.BinarySearchFromWordList(path, word);
+            try
+            {
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+
+                string path = "C:/Users/admin/source/repos/AlgorithmsProgram/AlgorithmsProgram/wordList.txt";
+                Console.WriteLine(path);
+                Console.WriteLine("Enter search word");
+                string word = Convert.ToString(Console.ReadLine());
+                Utility.BinarySearchFromWordList(path, word);
+
+                sw.Stop();
+                Console.WriteLine("Time Taken For Execution-->{0}", sw.ElapsedMilliseconds);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

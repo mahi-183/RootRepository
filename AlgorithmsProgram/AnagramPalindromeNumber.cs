@@ -8,7 +8,7 @@ namespace AlgorithmsProgram
     using System;
     using System.Collections.Generic;
     using System.Text;
-
+    using System.Diagnostics;
     /// <summary>
     /// Anagram Palindrome Number as class
     /// </summary>
@@ -21,11 +21,17 @@ namespace AlgorithmsProgram
         {
             try
             {
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+
                 int number = 0;
                 Console.WriteLine("\n...........................Extended Palindrome and Anagramme....................\n");
                 Console.WriteLine("Enetr Number");
                 Utility.FindAnagramPalindrome(number);
-                Console.ReadLine();
+
+
+                sw.Stop();
+                Console.WriteLine("Time Taken For Execution-->{0} ", sw.ElapsedMilliseconds + " ms");
             }
             catch (Exception ex)
             {
