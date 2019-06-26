@@ -8,6 +8,7 @@ namespace AlgorithmsProgram
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.IO;
 
     /// <summary>
     /// Utility as class
@@ -144,11 +145,7 @@ namespace AlgorithmsProgram
                 }
 
 
-                /// <summary>
                 /// to get prime numbers and store it into prime_Array
-                /// </summary>
-                /// <param name="number">prime_Array[j] as parameter</param>  
-                
                 Console.WriteLine("Prime numbers between 0 to "+ number +" are:");
                 for (int outerLoopCounter = 2; outerLoopCounter <= number; outerLoopCounter++)
                 {
@@ -501,22 +498,58 @@ namespace AlgorithmsProgram
         /// <param name="line">line as parameter</param>
         public static void BinarySearchFromWordList(string word, string line)
         {
-            int count = 0;
-            int i = 0;
-            string key = " ";
-            string[] array = new string[i];
+            /*  int count = 0;
+              int i = 0;
+              string key = " ";
+              string[] array = new string[word.Length];
 
-            for (i = 0; i < word.Length; i++)
+              Console.WriteLine("word length"+word.Length);
+
+              Console.WriteLine("file string element:");
+              for (i = 0; i < word.Length; i++) {
+                  Console.WriteLine(array[i]);
+              }
+              for (i = 0; i < word.Length; i++)
+              {
+                  if (key.Equals(array[i] == word))
+                  {
+                      Console.WriteLine("String found" + key);
+
+                  }
+                  else if (count == 0)
+                  {
+                      Console.WriteLine("Not found");
+                      BinarySearchFromWordList(word, line);
+                  }
+              }*/
+            //the path of the file
+            FileStream inFile = new FileStream(@"E:/ProgrammeFile/C#programmes/AlgorithmsProgram/AlgorithmsProgram/wordList.txt", FileMode.Open, FileAccess.ReadWrite);
+            //FileStream inFile1 = new FileStream(@"E:/ProgrammeFile/C#programmes/AlgorithmsProgram/AlgorithmsProgram/wordList.txt", FileMode.Open, FileAccess.ReadWrite);
+            StreamReader reader = new StreamReader(inFile);
+            StreamWriter writer = new StreamWriter(inFile);
+            string record;
+            string input;
+            Console.Write("Enter Friend's Birth Month >> ");
+            input = Console.ReadLine();
+            try
             {
-                if (key.Equals(array[i] == word))
+                //the program reads the record and displays it on the screen
+                record = reader.ReadLine();
+                while (record != null)
                 {
-                    Console.WriteLine("String found" + key);
+                    if (record.Contains(input))
+                    {
+                        Console.WriteLine(record);
+                    }
+                    
+                    record = reader.ReadLine();
                 }
-                else if (count == 0)
-                {
-                    Console.WriteLine("Not found");
-                    BinarySearchFromWordList(word, line);
-                }
+                Console.Write(input);           }
+            finally
+            {
+                //after the record is done being read, the progam closes
+                reader.Close();
+                inFile.Close();
             }
         }
 

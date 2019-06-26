@@ -6,13 +6,12 @@
 namespace AlgorithmsProgram
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
     using System.Diagnostics;
+
     /// <summary>
-    /// Anagram Palindrome Number as class
+    /// To check whether given number is palindrome and anagram
     /// </summary>
-   public class AnagramPalindromeNumber
+    public class AnagramPalindromeNumber
     {
         /// <summary>
         /// AnagramPalindrome as function
@@ -21,17 +20,17 @@ namespace AlgorithmsProgram
         {
             try
             {
-                Stopwatch sw = new Stopwatch();
-                sw.Start();
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
 
                 int number = 0;
                 Console.WriteLine("\n...........................Extended Palindrome and Anagramme....................\n");
-                Console.WriteLine("Enetr Number");
+                Console.WriteLine("Enter Number");
                 Utility.FindAnagramPalindrome(number);
 
 
-                sw.Stop();
-                Console.WriteLine("Time Taken For Execution-->{0} ", sw.ElapsedMilliseconds + " ms");
+                stopwatch.Stop();
+                Console.WriteLine("Time Taken For Execution-->{0} ", stopwatch.ElapsedMilliseconds + " ms");
             }
             catch (Exception ex)
             {

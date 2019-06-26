@@ -26,14 +26,15 @@ namespace AlgorithmsProgram
                 Stopwatch sw = new Stopwatch();
                 sw.Start();
 
-                string path = "C:/Users/admin/source/repos/AlgorithmsProgram/AlgorithmsProgram/wordList.txt";
-                Console.WriteLine(path);
+                string path = "E:/ProgrammeFile/C#programmes/AlgorithmsProgram/AlgorithmsProgram/wordList.txt";
+                //Console.WriteLine(path);
                 Console.WriteLine("Enter search word");
-                string word = Convert.ToString(Console.ReadLine());
+                string word =" ";
+                //string word = Convert.ToString(Console.ReadLine());
                 Utility.BinarySearchFromWordList(path, word);
 
                 sw.Stop();
-                Console.WriteLine("Time Taken For Execution-->{0}", sw.ElapsedMilliseconds);
+                Console.WriteLine("\n Time Taken For Execution-->{0}", sw.ElapsedMilliseconds);
             }
             catch (Exception ex)
             {

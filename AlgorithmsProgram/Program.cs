@@ -13,9 +13,9 @@ namespace AlgorithmsProgram
     public class Program
     {
         /// <summary>
-        /// Main is method
+        /// start point for application
         /// </summary>
-        /// <param name="args">args as parameter</param>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             try

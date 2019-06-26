@@ -21,20 +21,18 @@ namespace AlgorithmsProgram
         {
             try
             {
-                Stopwatch sw = new Stopwatch();
-                sw.Start();
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
                 string m_FirstString = "", m_SecondString = "";
 
                 Console.WriteLine("\n...........................Anagram Programme for String....................\n");
-                Console.WriteLine("Enter the fisrt string:");
+                Console.WriteLine("Enter the first string:");
                 m_FirstString = Convert.ToString(Console.ReadLine());
 
                 Console.WriteLine("Enter the Second string:");
                 m_SecondString = Convert.ToString(Console.ReadLine());
 
-                /// <summary>
-                /// AnagramFunction as function
-                /// </summary>
+               /// calling a function to find given string is anagram or not
                 Boolean m_IsAnagaram = Utility.AnagramFunction(m_FirstString, m_SecondString);
 
                 if (m_IsAnagaram == true)
@@ -46,12 +44,12 @@ namespace AlgorithmsProgram
                     Console.WriteLine("Given string " + m_FirstString + " and " + m_SecondString + " are not Anagrame");
                 }
 
-                sw.Stop();
-                Console.WriteLine("Time Taken for Execution-->{0} ", sw.ElapsedMilliseconds + " ms");
+                stopwatch.Stop();
+                Console.WriteLine("Time Taken for Execution-->{0} ", stopwatch.ElapsedMilliseconds + " ms");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
     }
