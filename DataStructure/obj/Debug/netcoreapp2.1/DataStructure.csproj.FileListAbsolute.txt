@@ -1,0 +1,11 @@
+E:\ProgrammeFile\C#programmes\DataStructure\DataStructure\bin\Debug\netcoreapp2.1\DataStructure.deps.json
+E:\ProgrammeFile\C#programmes\DataStructure\DataStructure\bin\Debug\netcoreapp2.1\DataStructure.runtimeconfig.json
+E:\ProgrammeFile\C#programmes\DataStructure\DataStructure\bin\Debug\netcoreapp2.1\DataStructure.runtimeconfig.dev.json
+E:\ProgrammeFile\C#programmes\DataStructure\DataStructure\bin\Debug\netcoreapp2.1\DataStructure.dll
+E:\ProgrammeFile\C#programmes\DataStructure\DataStructure\bin\Debug\netcoreapp2.1\DataStructure.pdb
+E:\ProgrammeFile\C#programmes\DataStructure\DataStructure\obj\Debug\netcoreapp2.1\DataStructure.csprojAssemblyReference.cache
+E:\ProgrammeFile\C#programmes\DataStructure\DataStructure\obj\Debug\netcoreapp2.1\DataStructure.csproj.CoreCompileInputs.cache
+E:\ProgrammeFile\C#programmes\DataStructure\DataStructure\obj\Debug\netcoreapp2.1\DataStructure.AssemblyInfoInputs.cache
+E:\ProgrammeFile\C#programmes\DataStructure\DataStructure\obj\Debug\netcoreapp2.1\DataStructure.AssemblyInfo.cs
+E:\ProgrammeFile\C#programmes\DataStructure\DataStructure\obj\Debug\netcoreapp2.1\DataStructure.dll
+E:\ProgrammeFile\C#programmes\DataStructure\DataStructure\obj\Debug\netcoreapp2.1\DataStructure.pdb
