@@ -116,13 +116,14 @@ namespace DataStructure
                     Node<T> newNode = new Node<T>(element);
                     Node<T> currentNode = head,prevNode=null;
 
-                    for (int i = 1; i <= position; i++)
+                    for (int i = 1; (i <= position-1); i++)
                     {
                         prevNode = currentNode;
                         currentNode = currentNode.next;
                     }
                     prevNode.next = newNode;
                     newNode.next = currentNode;
+                    currentNode = newNode;
                     isNodeInserted = true;
                 }
                 return isNodeInserted;
@@ -263,106 +264,58 @@ namespace DataStructure
                 throw new Exception(ex.Message);
             }
         }
-        /*  internal class Node
-         {
-             internal <t> data;
-             internal Node<T> next;
 
-             public Node(int data)
-             {
-                 this.data = data;
-                 this.next = null;
-             }
-         }
+        //---------------------------------------------------ordered List Operations------------------------------------------------------
 
-         public void Insert(int data)
-         {
-             Node NewNode = new Node(data);
-             Node currentNode = ListObj.head;
+        public bool insertElementBySorting(T element)
+        {
+            try
+            {
+                Node<T> newNode = new Node<T>(element);
+                Node<T> currentNode = head, previousNode = null;
+                bool isInserted = false;
 
-             if (ListObj.head == null)
-             {
-                 ListObj.head = NewNode;
-                 return;
-             }
-             while(currentNode.next != null)
-             {
-                 currentNode = currentNode.next;
-             }
-             currentNode.next = NewNode;
+                if (currentNode == null)
+                {
+                    head = newNode;
+                    isInserted = true;
+                }
+                else
+                {
+                    int linkedListData = Convert.ToInt32(currentNode.Data);
+                    int fileData = Convert.ToInt32(element);
 
-         }
+                    if (linkedListData > fileData)
+                    {
+                        head = newNode;
+                        newNode.next = currentNode;
+                    }
 
-         public Boolean searchElement(int data)
-         {
-             Node currentNode = ListObj.head;
-             bool elementFound = false;
-             while(currentNode.next != null)
-             {
-                 if(currentNode.data == data)
-                 {
-                     elementFound = true;
-                     break;
-                 }
-                 currentNode = currentNode.next;
-             }
-             return elementFound;
-         }
+                    while (currentNode.next != null && fileData > linkedListData)
+                    {
+                        previousNode = currentNode;
+                        currentNode = currentNode.next;
+                        linkedListData = Convert.ToInt32(currentNode.Data);
+                    }
+                    if (currentNode.next == null && fileData > linkedListData)
+                    {
+                        currentNode.next = newNode;
+                    }
+                    if (fileData < linkedListData)
+                    {
+                        previousNode.next = newNode;
+                        newNode.next = currentNode;
+                    }
+                    isInserted = true;
+                }
+                return isInserted;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        
 
-
-         public void RemoveNode(int data)
-         {
-             Node NewNode = new Node(data);
-             Node previousNode = null;
-
-             Node currentNode = ListObj.head;
-             if (currentNode.data == data && currentNode == ListObj.head)
-             {
-                 ListObj.head = currentNode.next;
-                 return;
-             }
-
-             while (currentNode.next != null)
-             {
-                 if (currentNode.data == data)
-                 {
-                     previousNode.next = currentNode.next;
-                     break;
-                 }
-                 previousNode = currentNode;
-                 currentNode = currentNode.next;
-             }
-
-         }
-
-
-         public void displayList()
-         {
-             Node currentNode = ListObj.head;
-             Console.WriteLine("LinkedList:");
-             while (currentNode != null)
-             {
-                 Console.WriteLine(currentNode.data);
-                 currentNode = currentNode.next;
-             }
-         }
-         */
-
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-}
+    }//end of class linkedlist
+}//end of namespace

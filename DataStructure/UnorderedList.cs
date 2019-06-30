@@ -28,7 +28,7 @@ namespace DataStructure
                 LinkedList<string> linkedList = new LinkedList<string>();
                 //linkedList.DisplayLinkedList();
                 Utility utility = new Utility();
-                string path = utility.FilePath();
+                string path = utility.GetFilePath();
                 string textFileDataString = File.ReadAllText(path);
 
                 bool isElementFound = false;
@@ -62,63 +62,75 @@ namespace DataStructure
                 Console.WriteLine("The linked List is:");
                 linkedList.DisplayLinkedList();
 
-                do
-                {
-                    Console.WriteLine("\n1. AddFirstPosition " +
-                                "\n2. AddLastPosition " +
-                                "\n3. AddAtPosition " +
-                                "\n4. SearchElement " +
-                                "\n5. DisplayLinkedList " +
-                                "\n6. RemoveElement " +
-                                "\n7. SizeOfList ");
+                /*    Console.WriteLine("Enter the search element:");
+                  string element1 = Console.ReadLine();
 
-                    Console.WriteLine("Enter the choice for perform following operations:");
-                    choice = Convert.ToInt32(Console.ReadLine());
+                  Console.WriteLine("Enter the position :");
+                  int position =Convert.ToInt32( Console.ReadLine());
 
-                    UnorderedList unorderedlist = new UnorderedList();
+                  linkedList.AddAtPosition(element1, position);
 
-                    switch (choice)
-                    {
-                        case 1:
-                            unorderedlist.UnordereList();
-                            break;
+                  Console.WriteLine("The linked List is:");
+                  linkedList.DisplayLinkedList();
 
-                        case 2:
 
-                            break;
+                 do
+                   {
+                       Console.WriteLine("\n1. AddFirstPosition " +
+                                   "\n2. AddLastPosition " +
+                                   "\n3. AddAtPosition " +
+                                   "\n4. SearchElement " +
+                                   "\n5. DisplayLinkedList " +
+                                   "\n6. RemoveElement " +
+                                   "\n7. SizeOfList ");
 
-                        case 3:
+                       Console.WriteLine("Enter the choice for perform following operations:");
+                       choice = Convert.ToInt32(Console.ReadLine());
 
-                            break;
+                       UnorderedList unorderedlist = new UnorderedList();
 
-                        case 4:
+                       switch (choice)
+                       {
+                           case 1:
+                               unorderedlist.UnordereList();
+                               break;
 
-                            break;
+                           case 2:
 
-                        case 5:
+                               break;
 
-                            break;
+                           case 3:
 
-                        case 6:
+                               break;
 
-                            break;
+                           case 4:
 
-                        case 7:
+                               break;
 
-                            break;
+                           case 5:
 
-                        case 8:
+                               break;
 
-                            break;
+                           case 6:
 
-                       default:
-                            Console.WriteLine("Invalid choice ...!");
-                            Console.WriteLine("ReEnter choice");
-                            break;
-                    }
-                    Console.WriteLine("Enter y / n for continue:");
-                     ch = Convert.ToChar(Console.ReadLine());
-                 } while (ch != 'N') ;
+                               break;
+
+                           case 7:
+
+                               break;
+
+                           case 8:
+
+                               break;
+
+                          default:
+                               Console.WriteLine("Invalid choice ...!");
+                               Console.WriteLine("ReEnter choice");
+                               break;
+                       }
+                       Console.WriteLine("Enter y / n for continue:");
+                        ch = Convert.ToChar(Console.ReadLine());
+                    } while (ch != 'N') ;*/
             }
             catch (Exception ex)
             {

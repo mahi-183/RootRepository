@@ -4,26 +4,33 @@
 // </copyright>
 // <creator name="Mahesh Aurad"/>
 //-----------------------------------------------------------------------
-
 namespace DataStructure
 {
-
     using System;
 
     /// <summary>
-    /// Node class which creates a Node of the linkedList
+    /// 
     /// </summary>
-    ///<typeparam name="T"> word </typeparam>
-    public class Node<T>
-    {
-        public Node<T> next;
-        public T Data;
-       // internal T word;
 
-        public Node(T Data)
+    public class Dequeue<E>
+    {
+
+        public E data;
+        public Dequeue<E> next;
+        public Dequeue<E> pre;
+
+        public Dequeue()
         {
-            this.Data = Data;
-            this.next = null;
+            next = null;
+            pre = null;
+        }
+
+        public Dequeue(E value)
+        {
+            data = value;
+            next = null;
+            pre = null;
         }
     }
+
 }

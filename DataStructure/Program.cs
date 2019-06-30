@@ -51,11 +51,13 @@ namespace DataStructure
                             break;
 
                         case 2:
-                           
+                            LinkedList<int> linkedList = new LinkedList<int>();
+                            OrderedList.orderedList();
                             break;
 
                         case 3:
-
+                            BalancedParanthesis bObj = new BalancedParanthesis();
+                            bObj.balancedParanthesis();
                             break;
 
                         case 4:
@@ -63,11 +65,13 @@ namespace DataStructure
                             break;
 
                         case 5:
-
+                            PalindromeChecker palindrom = new PalindromeChecker();
+                            palindrom.CheckPalindrome();
                             break;
 
                         case 6:
-
+                            HashingFunction hobj = new HashingFunction();
+                            hobj.hashingFunction();
                             break;
 
                         case 7:
