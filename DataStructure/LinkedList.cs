@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="AnagramPalindromeNumber.cs" company="Bridgelabz">
+// <copyright file="LinkedList.cs" company="Bridgelabz">
 // Company copyright tag.
 // </copyright>
 // <creator name="Mahesh Aurad"/>
@@ -285,28 +285,45 @@ namespace DataStructure
                     int linkedListData = Convert.ToInt32(currentNode.Data);
                     int fileData = Convert.ToInt32(element);
 
-                    if (linkedListData > fileData)
-                    {
-                        head = newNode;
-                        newNode.next = currentNode;
-                    }
-
-                    while (currentNode.next != null && fileData > linkedListData)
-                    {
-                        previousNode = currentNode;
-                        currentNode = currentNode.next;
-                        linkedListData = Convert.ToInt32(currentNode.Data);
-                    }
                     if (currentNode.next == null && fileData > linkedListData)
                     {
                         currentNode.next = newNode;
+                        newNode.next = null;
+                        isInserted = true;
                     }
-                    if (fileData < linkedListData)
+                    else if (currentNode.next == null && fileData < linkedListData)
                     {
-                        previousNode.next = newNode;
+                        head = newNode;
                         newNode.next = currentNode;
+                        isInserted = true;
                     }
-                    isInserted = true;
+                    else if (fileData < linkedListData) {
+                        head = newNode;
+                        newNode.next = currentNode;
+                        isInserted = true;
+                    }
+                    else
+                    {
+                        while (currentNode.next != null && fileData > linkedListData)
+                        {
+                            previousNode = currentNode;
+                            currentNode = currentNode.next;
+                            linkedListData = Convert.ToInt32(currentNode.Data);
+                        }
+                        if (fileData > linkedListData)
+                        {
+                            currentNode.next = newNode;
+                            isInserted = true;
+                        }
+                        if (fileData < linkedListData)
+                        {
+                            previousNode.next = newNode;
+                            newNode.next = currentNode;
+                            isInserted = true;
+                        }
+
+                    }
+
                 }
                 return isInserted;
             }

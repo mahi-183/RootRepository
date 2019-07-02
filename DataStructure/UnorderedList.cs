@@ -23,8 +23,8 @@ namespace DataStructure
         {
             try
             {
-                int choice = 0;
-                char ch = 'y';
+                //int choice = 0;
+                //char ch = 'y';
                 LinkedList<string> linkedList = new LinkedList<string>();
                 //linkedList.DisplayLinkedList();
                 Utility utility = new Utility();

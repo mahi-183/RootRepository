@@ -1,4 +1,10 @@
 ﻿
+//-----------------------------------------------------------------------
+// <copyright file="HashingUtility.cs" company="Bridgelabz">
+// Company copyright tag.
+// </copyright>
+// <creator name="Mahesh Aurad"/>
+//-----------------------------------------------------------------------
 
 namespace DataStructure
 {
@@ -20,49 +26,65 @@ namespace DataStructure
         {
             try
             {
-                Node<T> tempNode;
-                Node<T> newNode = new Node<T>(element);
-                int linkedListData = Convert.ToInt32(newNode.Data);
-                int rem = linkedListData % 11;
 
-                tempNode = head[rem];
+                Node<T> newNode = new Node<T>(element);
+                int filedata = Convert.ToInt32(newNode.Data);
+                int position = filedata % 11;
                 
-                Node<T> currentNode = head[rem], previousNode = null;
+                Node<T> currentNode = head[position], previousNode = null;
 
                 bool isInserted = false;
 
                 if (currentNode == null)
                 {
-                    head[rem] = newNode;
+                    head[position] = newNode;
                     isInserted = true;
                 }
                 else
                 {
                    
                     int fileData = Convert.ToInt32(element);
+                    int linkedListData = Convert.ToInt32(currentNode.Data);
 
-                    if (linkedListData > fileData)
-                    {
-                        head[rem] = newNode;
-                        newNode.next = currentNode;
-                    }
-
-                    while (currentNode.next != null && fileData > linkedListData)
-                    {
-                        previousNode = currentNode;
-                        currentNode = currentNode.next;
-                        linkedListData = Convert.ToInt32(currentNode.Data);
-                    }
                     if (currentNode.next == null && fileData > linkedListData)
                     {
+
                         currentNode.next = newNode;
+                        newNode.next = null;
+                        isInserted = true;
                     }
-                    if (fileData < linkedListData)
+                    else if (currentNode.next == null && fileData < linkedListData)
                     {
-                        previousNode.next = newNode;
+                        head[position] = newNode;
                         newNode.next = currentNode;
+                        isInserted = true;
                     }
-                    isInserted = true;
+                    else if (fileData < linkedListData)
+                    {
+                        head[position] = newNode;
+                        newNode.next = currentNode;
+                        isInserted = true;
+                    }
+                    else
+                    {
+                        while (currentNode.next != null && fileData > linkedListData)
+                        {
+                            previousNode = currentNode;
+                            currentNode = currentNode.next;
+                            linkedListData = Convert.ToInt32(currentNode.Data);
+                        }
+                        if (fileData > linkedListData)
+                        {
+                            currentNode.next = newNode;
+                            isInserted = true;
+                        }
+                        if (fileData < linkedListData)
+                        {
+                            previousNode.next = newNode;
+                            newNode.next = currentNode;
+                            isInserted = true;
+                        }
+                    }
                 }
                 return isInserted;
             }

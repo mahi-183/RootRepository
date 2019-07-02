@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="AnagramPalindromeNumber.cs" company="Bridgelabz">
+// <copyright file="Utility.cs" company="Bridgelabz">
 // Company copyright tag.
 // </copyright>
 // <creator name="Mahesh Aurad"/>
@@ -87,6 +87,11 @@ namespace DataStructure
             return integerArray;
         }
 
+        /// <summary>
+        /// Validation for input string
+        /// </summary>
+        /// <param name="str"> string parameter</param>
+        /// <returns></returns>
         public bool IsAlphaNum(string str)
         {
             if (string.IsNullOrEmpty(str))
@@ -101,5 +106,121 @@ namespace DataStructure
             return true;
         }
 
+        /// <summary>
+        /// Validation for input Expression like { } $ @ & 
+        /// </summary>
+        /// <param name="str"> string parameter</param>
+        /// <returns></returns>
+        public bool IsExpression(string expression)
+        {
+            if (string.IsNullOrEmpty(expression))
+                return false;
+           // char[] charArray = expression.ToCharArray();
+            for (int i = 0; i < expression.Length; i++)
+            {
+                if (   expression[i] == '@' || expression[i] == '$' || expression[i] == '&' || expression[i] == '~' ||
+                       expression[i] == '{' || expression[i] == '}' || expression[i] == '[' || expression[i] == ']'
+                    )
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Primes the anagram.
+        /// </summary>
+        /// <param name="range">The range.</param>
+        /// <returns>int</returns>
+        public static int[] PrimeAnagram(int range)
+        {
+            int index = 0;
+            int[] array = new int[200];
+            int[] anagram = new int[158];
+            int count = 0;
+
+            for (int i = 2; i < range; i++)
+            {
+                if (IsPrime(i))
+                {
+                    array[index] = i;
+                    index++;
+                }
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    string string1 = array[i].ToString();
+                    string string2 = array[j].ToString();
+
+                    if (IsAnagram(string1, string2))
+                    {
+                        count++;
+                        anagram[count] = array[j];
+                        count++;
+                    }
+                }
+            }
+            return anagram;
+        }
+
+        /// <summary>
+        /// Determines whether the specified no is prime.
+        /// </summary>
+        /// <param name="no">The no.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified no is prime; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsPrime(int no)
+        {
+
+            for (int i = 2; i < no / 2; i++)
+            {
+                if (no % i == 0)
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Determines whether the specified STR1 is anagram.
+        /// </summary>
+        /// <param name="str1">The STR1.</param>
+        /// <param name="str2">The STR2.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified STR1 is anagram; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsAnagram(string str1, string str2)
+        {
+            bool status = true;
+
+            if (str1.Length != str2.Length)
+            {
+                status = false;
+            }
+            else
+            {
+                char[] array1 = str1.ToCharArray();
+                char[] array2 = str2.ToCharArray();
+                Array.Sort(array1);
+                Array.Sort(array2);
+                status = Equals(array1, array2);
+            }
+            if (status)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

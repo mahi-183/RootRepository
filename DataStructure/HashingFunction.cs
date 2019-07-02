@@ -34,8 +34,13 @@ namespace DataStructure
                 Console.WriteLine("The linked List is:");
                 hashlist.DisplayList();
 
-                Console.WriteLine("Enter the search Element:");
+                Console.WriteLine("Enter the Element to add in hashing list:");
                 int element = Convert.ToInt32(Console.ReadLine());
+
+                hashlist.AddNumberList(element);
+
+                Console.WriteLine("The linked List is:");
+                hashlist.DisplayList();
 
             }
             catch (Exception ex)

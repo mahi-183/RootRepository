@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="AnagramPalindromeNumber.cs" company="Bridgelabz">
+// <copyright file="OrderedList.cs" company="Bridgelabz">
 // Company copyright tag.
 // </copyright>
 // <creator name="Mahesh Aurad"/>
@@ -25,7 +25,7 @@ namespace DataStructure
                 Console.WriteLine("The string from file is: " + textFile);
                 int[] integerArray = utility.IntegerArray(textFile);
 
-                Console.ReadLine();
+               // Console.ReadLine();
                 for (int i = 0; i < integerArray.Length; i++)
                 {
                     linkedList.insertElementBySorting(integerArray[i]);

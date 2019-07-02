@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="AnagramPalindromeNumber.cs" company="Bridgelabz">
+// <copyright file="Stack.cs" company="Bridgelabz">
 // Company copyright tag.
 // </copyright>
 // <creator name="Mahesh Aurad"/>
@@ -18,7 +18,7 @@ namespace DataStructure
          internal Node<T> head;
 
 
-        int Top = -1, size = 0;
+        int Top = -1, size = 0, size1 = 0, top = -1;
         /// <summary>
         /// 
         /// </summary>
@@ -96,6 +96,20 @@ namespace DataStructure
                 throw new Exception(ex.Message);
             }
         }
+        /// <summary>
+        /// remove element from stack
+        /// </summary>
+        /// <returns></returns>
+        public T Pop()
+        {
+            Node<T> current = head;
+            head = current.next;
+            top--;
+            size1--;
+
+            return current.Data;
+        }
+
         /// <summary>
         /// 
         /// </summary>
