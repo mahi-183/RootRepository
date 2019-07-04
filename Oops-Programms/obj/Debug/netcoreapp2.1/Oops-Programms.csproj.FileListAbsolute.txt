@@ -1,0 +1,11 @@
+E:\ProgrammeFile\C#programmes\Oops-Programms\Oops-Programms\bin\Debug\netcoreapp2.1\Oops-Programms.deps.json
+E:\ProgrammeFile\C#programmes\Oops-Programms\Oops-Programms\bin\Debug\netcoreapp2.1\Oops-Programms.runtimeconfig.json
+E:\ProgrammeFile\C#programmes\Oops-Programms\Oops-Programms\bin\Debug\netcoreapp2.1\Oops-Programms.runtimeconfig.dev.json
+E:\ProgrammeFile\C#programmes\Oops-Programms\Oops-Programms\bin\Debug\netcoreapp2.1\Oops-Programms.dll
+E:\ProgrammeFile\C#programmes\Oops-Programms\Oops-Programms\bin\Debug\netcoreapp2.1\Oops-Programms.pdb
+E:\ProgrammeFile\C#programmes\Oops-Programms\Oops-Programms\obj\Debug\netcoreapp2.1\Oops-Programms.csprojAssemblyReference.cache
+E:\ProgrammeFile\C#programmes\Oops-Programms\Oops-Programms\obj\Debug\netcoreapp2.1\Oops-Programms.csproj.CoreCompileInputs.cache
+E:\ProgrammeFile\C#programmes\Oops-Programms\Oops-Programms\obj\Debug\netcoreapp2.1\Oops-Programms.AssemblyInfoInputs.cache
+E:\ProgrammeFile\C#programmes\Oops-Programms\Oops-Programms\obj\Debug\netcoreapp2.1\Oops-Programms.AssemblyInfo.cs
+E:\ProgrammeFile\C#programmes\Oops-Programms\Oops-Programms\obj\Debug\netcoreapp2.1\Oops-Programms.dll
+E:\ProgrammeFile\C#programmes\Oops-Programms\Oops-Programms\obj\Debug\netcoreapp2.1\Oops-Programms.pdb

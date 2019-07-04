@@ -1,0 +1,54 @@
+{
+  "rice": [
+    {
+      "Name": "Basumati",
+      "weight": 20.0,
+      "Price": 200.0
+    },
+    {
+      "Name": "Indrayani",
+      "weight": 10.0,
+      "Price": 100.0
+    },
+    {
+      "Name": "Tukada Basumati",
+      "weight": 20.0,
+      "Price": 60.0
+    }
+  ],
+  "Wheat": [
+    {
+      "Name": "Durum",
+      "weight": 10.0,
+      "Price": 32.0
+    },
+    {
+      "Name": "Common",
+      "weight": 10.0,
+      "Price": 22.0
+    },
+    {
+      "Name": "orange",
+      "weight": 10.0,
+      "Price": 30.0
+    }
+  ],
+
+  "Pulses": [
+    {
+      "Name": "Urad Whole Black",
+      "weight": 10.0,
+      "Price": 64.0
+    },
+    {
+      "Name": "Masoor Brown Lentis",
+      "weight": 10.0,
+      "Price": 49.0
+    },
+    {
+      "Name": "Kulti Dal",
+      "weight": 10.0,
+      "Price": 30.0
+    }
+  ]
+}
