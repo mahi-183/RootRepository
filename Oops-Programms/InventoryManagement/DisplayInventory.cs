@@ -23,14 +23,14 @@ namespace Oops_Programms.InventoryManagement
             try
             {
                 //json file path
-                string path = @"E:\ProgrammeFile\C#programmes\Oops-Programms\Oops-Programms\InventoryManagment.json";
-
-                using (StreamReader reader = File.OpenText(path))
+                ConstantClass path = new ConstantClass();
+                
+                using (StreamReader reader = File.OpenText(path.InventoryJsonfilePath))
                 {
-                    ///StreamWriter writer = File.OpenWrite("path",0);
+                    ///json object
                     string json = reader.ReadToEnd();
 
-                    ///stores json file data 
+                    ///stores json file data in jsoninventory 
                     InventoryList Jsoninventory = JsonConvert.DeserializeObject<InventoryList>(json);
 
                     /// creats list of inventory data from json object

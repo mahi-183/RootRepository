@@ -7,12 +7,20 @@
 
 namespace Oops_Programms
 {
+    using System.IO;
     using System;
     /// <summary>
     /// 
     /// </summary>
-    class Utility
+    public class Utility
     {
-
+        public string FileReader(string path)
+        {
+            StreamReader reader = File.OpenText(path);
+            string json = reader.ReadToEnd();
+            reader.Close();
+            return json;
+        }
     }
+    
 }

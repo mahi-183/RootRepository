@@ -2,17 +2,19 @@
     {
       "CompanyName": "Microsoft",
       "NoOfShares": 1000,
-      "SharePrice": 75
+      "SharePrice": 75.0
     },
     {
       "CompanyName": "Google",
       "NoOfShares": 2000,
-      "SharePrice": 100
+      "SharePrice": 100.0
     },
-    {
-      "CompanyName": "Machining Software",
-      "NoOfShares": 3000,
-      "SharePrice": 110
-    }
-  ]
+  {
+    "CompanyName": "Machining Software",
+    "NoOfShares": 3000,
+    "SharePrice": 110.0
+  }
+
+ ]
+
 

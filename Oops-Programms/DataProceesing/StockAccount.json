@@ -1,0 +1,20 @@
+{
+  "CompanyDetails": [
+    {
+      "CompanyName": "Infosys",
+      "NoOfShares": 100,
+      "SharePrice": 200.0
+    },
+    {
+      "CompanyName": "Google",
+      "NoOfShares": 1000,
+      "SharePrice": 100.0
+    },
+    {
+      "CompanyName": "Microsoft",
+      "NoOfShares": 100,
+      "SharePrice": 150.0
+    }
+  ]
+}
+

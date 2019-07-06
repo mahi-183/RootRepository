@@ -25,9 +25,25 @@ namespace Oops_Programms.InventoryManagement
         /// <value>
         /// The inventoryname.
         /// </value>
-        public string Name { get; set; }
-        public double Weight { get; set; }
-        public double Price { get; set; }
+        //public string Name { get; set; }
+       // private double Weight { get; set; }
+        //private double Price { get; set; }
+
+        public string Name
+        {
+            get { return this.name; }
+            set { this.name = value; }
+        }
+        public double Weight
+        {
+            get { return this.weight; }
+            set { this.weight = value; }
+        }
+        public double Price
+        {
+            get { return this.price; }
+            set { this.price = value; }
+        }
     } 
 
     public class InventoryList

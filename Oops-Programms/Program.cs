@@ -23,8 +23,8 @@ namespace Oops_Programms
                     Console.WriteLine("select from the following");
                     Console.WriteLine("1.Inventory\n");
                     Console.WriteLine("2.Regular Expression\n");
-                    Console.WriteLine("3.Inventory Managment\n");
-                    Console.WriteLine("4.Stock\n");
+                    Console.WriteLine("3.Stock Report\n");
+                    Console.WriteLine("4.Inventory Managment\n");
                     Console.WriteLine("5.Commercial Data Processing\n");
                     Console.WriteLine("6.Address Book\n");
                     Console.WriteLine("7.Deck of Cards\n");
@@ -47,19 +47,21 @@ namespace Oops_Programms
                             break;
 
                         case 3:
-                            //InentoryManager inentoryManager = new InentoryManager();
-                            //inentoryManager.Manage();
-                            //break;
+                            CompanyStock.StockReportClass stock = new CompanyStock.StockReportClass() ;
+                            stock.StockReport();
+                            break;
 
-                        //case 4:
-                        //    Stock stock = new Stock();
-                        //    stock.StockReport();
-                        //    break;
+                        case 4:
+                            InventoryManager.InventoryManager invManager = new InventoryManager.InventoryManager();
+                            invManager.Manage();
+                            break;
 
-                        //case 5:
-                        //    break;
+                        case 5:
+                            DataProceesing.StockAccount stockAccount = new DataProceesing.StockAccount();
+                            stockAccount.DisplayDetails();
+                            break;
 
-                        //case 6:
+                        case 6:
                         //    AddressBook addressBook = new AddressBook();
                         //    addressBook.Book();
                         //    break;
