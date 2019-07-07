@@ -20,15 +20,11 @@ namespace Oops_Programms.InventoryManagement
 
 
         /// <summary>
-        /// Gets or sets the inventoryname, weight,price.
+        /// Gets or sets the Inventory Name, Weight,Price.
         /// </summary>
         /// <value>
         /// The inventoryname.
         /// </value>
-        //public string Name { get; set; }
-       // private double Weight { get; set; }
-        //private double Price { get; set; }
-
         public string Name
         {
             get { return this.name; }

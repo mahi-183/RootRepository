@@ -24,7 +24,7 @@ namespace Oops_Programms.DataProceesing
         {
             try
             {
-                    ConstantClass constantClass = new ConstantClass();
+                    Constant constantClass = new Constant();
                     //json file path
 
                      StreamReader reader = File.OpenText(constantClass.StockAccountData);

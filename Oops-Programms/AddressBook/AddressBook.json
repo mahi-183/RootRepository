@@ -1,0 +1,34 @@
+[
+  {
+    "FullName": "abc",
+    "Address": "xyz",
+    "MobileNumber": "7720009867",
+    "State": "aaaaa",
+    "Pin": "441122",
+    "City": "pune"
+  },
+  {
+    "FullName": "abc",
+    "Address": "xyz",
+    "MobileNumber": "9527768800",
+    "State": "aaaaa",
+    "Pin": "441122",
+    "City": "pune"
+  },
+  {
+    "FullName": "qqq",
+    "Address": "ww",
+    "MobileNumber": "9158044013",
+    "State": "ww",
+    "Pin": "411015",
+    "City": "ee"
+  },
+  {
+    "FullName": "Mahesh Aurad",
+    "Address": "vaibhav colony tingrenagar",
+    "MobileNumber": "9156059591",
+    "State": "Maharashtra",
+    "Pin": "41015",
+    "City": "pune"
+  }
+]

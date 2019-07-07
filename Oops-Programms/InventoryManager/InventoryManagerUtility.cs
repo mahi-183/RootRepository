@@ -19,72 +19,77 @@ namespace Oops_Programms.InventoryManager
 
     class InventoryManagerUtility
     {
+        //json file path
+        static Constant JosonFilePath = new Constant();
+        static StreamReader StreamReader = File.OpenText(JosonFilePath.InventoryJsonfilePath);
+        static string JsonString = StreamReader.ReadToEnd();
+        //json String object
+         static InventoryManagement.InventoryList JsonObject = JsonConvert.DeserializeObject<InventoryManagement.InventoryList>(JsonString);
+
+        static IList<InventoryManagement.InventoryData> RiceArrayList = JsonObject.Rice;
+
+        /// creats list of inventory data from json object
+        static IList<InventoryManagement.InventoryData> wheat = JsonObject.Wheat;
+
+
+        /// creats list of inventory data from json object
+        static IList<InventoryManagement.InventoryData> pulses = JsonObject.Pulses;
+
         public static void DisplayInventory()
         {
             try
             {
 
-                //json file path
-                ConstantClass filePath = new ConstantClass();
-
-                using (StreamReader reader = File.OpenText(filePath.InventoryJsonfilePath))
-                {
-                    //json String object
-                    string jsonObject = reader.ReadToEnd();
-
-                    ///stores json file object 
-                    InventoryManagement.InventoryList jsonString = JsonConvert.DeserializeObject<InventoryManagement.InventoryList>(jsonObject);
-
-                    IList<InventoryManagement.InventoryData> rice = jsonString.Rice;
+                    //IList<InventoryManagement.InventoryData> RiceArrayList = JsonObject.Rice;
                     Console.WriteLine("\n------------------------------------TYPES OF RICE AND ITS PRICES PER/KG------------------------------------------");
                     Console.WriteLine("\n" + "Name" + "\t\t " + "Weight" + " \t" + "Price");
-                    double riceprice = 0;
+                    double TotalRicePrice = 0;
 
                     ///iterates list to display rice details
-                    foreach (var item in rice)
+                    foreach (var item in RiceArrayList)
                     {
                         Console.WriteLine(item.Name + "\t\t" + item.Weight + "\t" + item.Price + " ");
-                        riceprice = riceprice + (item.Price * item.Weight);
+                        TotalRicePrice = TotalRicePrice + (item.Price * item.Weight);
                     }
                     Console.WriteLine("\n------------------------------------------------------------------------------------------");
 
-                    Console.WriteLine("\n\t\t\tTotal price of Rice:::" + riceprice);
+                    Console.WriteLine("\n\t\t\tTotal price of Rice:::" + TotalRicePrice);
                     Console.WriteLine("\n-------------------------------------------------------------------------------------------");
                     /// creats list of inventory data from json object
-                    IList<InventoryManagement.InventoryData> wheat = jsonString.Wheat;
+                    IList<InventoryManagement.InventoryData> WheatArrayList = JsonObject.Wheat;
                     Console.WriteLine("\n------------------------------------TYPES OF Wheat AND ITS PRICES PER/KG------------------------------------------");
                     Console.WriteLine("\n" + "Name" + "\t\t " + "Weight" + " \t" + "Price");
-                    double wheatprice = 0;
+                    double TotalWheatPrice = 0;
 
                     ///iterates list to display rice details
-                    foreach (var item in wheat)
+                    foreach (var item in WheatArrayList)
                     {
                         Console.WriteLine(item.Name + "\t\t" + item.Weight + "\t" + item.Price + " ");
-                        wheatprice = wheatprice + (item.Price * item.Weight);
+                        TotalWheatPrice = TotalWheatPrice + (item.Price * item.Weight);
                     }
                     Console.WriteLine("\n------------------------------------------------------------------------------------------");
 
-                    Console.WriteLine("\n\t\t\tTotal price of Rice:::" + wheatprice);
+                    Console.WriteLine("\n\t\t\tTotal price of Rice:::" + TotalWheatPrice);
                     Console.WriteLine("\n-------------------------------------------------------------------------------------------");
 
                     /// creats list of inventory data from json object
-                    IList<InventoryManagement.InventoryData> pulses = jsonString.Pulses;
+                    IList<InventoryManagement.InventoryData> PulsesArrayList = JsonObject.Pulses;
                     Console.WriteLine("\n------------------------------------TYPES OF Wheat AND ITS PRICES PER/KG------------------------------------------");
                     Console.WriteLine("\n" + "Name" + "\t\t " + "Weight" + " \t" + "Price");
-                    double pulsesprice = 0;
+                    double TotalPulsesPrice = 0;
 
                     ///iterates list to display rice details
-                    foreach (var item in pulses)
+                    foreach (var item in PulsesArrayList)
                     {
                         Console.WriteLine(item.Name + "\t\t" + item.Weight + "\t" + item.Price + " ");
-                        pulsesprice = pulsesprice + (item.Price * item.Weight);
+                        TotalPulsesPrice = TotalPulsesPrice + (item.Price * item.Weight);
                     }
                     Console.WriteLine("\n------------------------------------------------------------------------------------------");
 
-                    Console.WriteLine("\n\t\t\tTotal price of Rice:::" + pulsesprice);
+                    Console.WriteLine("\n\t\t\tTotal price of Rice:::" + TotalPulsesPrice);
                     Console.WriteLine("\n-------------------------------------------------------------------------------------------");
 
-                }
+                //}
             }
             catch (Exception ex)
             {
@@ -100,129 +105,128 @@ namespace Oops_Programms.InventoryManager
         {
             try
             {
-                int selectInventory = 0;
+                int SelectInventory = 0;
                 do
                 {
                     Console.WriteLine("1.Rice\n 2.wheat\n3.Pulses\n");
                     Console.WriteLine("Select Inventory:");
-                    selectInventory = Convert.ToInt32(Console.ReadLine());
-                    //reads data from json file
-                    ConstantClass path = new ConstantClass();
-
-                    StreamReader reader = File.OpenText(path.InventoryJsonfilePath);
-
-                    string jsonString = reader.ReadToEnd();
-
-                    ///stores json file data 
-                    InventoryManagement.InventoryList Jsoninventory = JsonConvert.DeserializeObject<InventoryManagement.InventoryList>(jsonString);
-
-                    switch(selectInventory)
+                    SelectInventory = Convert.ToInt32(Console.ReadLine());
+                   
+                    switch(SelectInventory)
                     {
                         case 1:
-
-                            /// creats list of inventory data from json object
-                            IList<InventoryManagement.InventoryData> rice = Jsoninventory.Rice;
-
-                            Console.WriteLine("Enter inventory name;");
-                            string riceType = Console.ReadLine();
-                            Console.WriteLine("Enter the weight");
-                            int riceWeight = Convert.ToInt32(Console.ReadLine());
-                            Console.WriteLine("Enter the price");
-                            double ricePrice = Convert.ToDouble(Console.ReadLine());
-                            if (Regex.IsMatch(riceType, @"^[a-zA-Z]+$"))
-                            {
-                                InventoryManagement.InventoryData inventory = new InventoryManagement.InventoryData()
-                                {
-                                    Name = riceType,
-                                    Weight = riceWeight,
-                                    Price = ricePrice,
-                                };
-                                rice.Add(inventory);
-
-                                var convertedJson = JsonConvert.SerializeObject(Jsoninventory);
-                                reader.Close();
-                                File.WriteAllText(path.InventoryJsonfilePath, convertedJson);
-                                Console.WriteLine("New Inventory Added to the file");
-                                DisplayInventory();
-                            }
-
+                            AddRiceInventoryData();
                             break;
 
                         case 2:
-
-                            /// creats list of inventory data from json object
-                            IList<InventoryManagement.InventoryData> wheat = Jsoninventory.Wheat;
-
-                            Console.WriteLine("Enter inventory name;");
-                            string wheatType = Console.ReadLine();
-                            Console.WriteLine("Enter the weight");
-                            int wheatWeight = Convert.ToInt32(Console.ReadLine());
-                            Console.WriteLine("Enter the price");
-                            double wheatPrice = Convert.ToDouble(Console.ReadLine());
-                            if (Regex.IsMatch(wheatType, @"^[a-zA-Z]+$"))
-                            {
-                                InventoryManagement.InventoryData inventory = new InventoryManagement.InventoryData()
-                                {
-                                    Name = wheatType,
-                                    Weight = wheatWeight,
-                                    Price = wheatPrice,
-                                };
-                                wheat.Add(inventory);
-
-                                var convertedJson = JsonConvert.SerializeObject(Jsoninventory);
-                                reader.Close();
-                                File.WriteAllText(path.InventoryJsonfilePath, convertedJson);
-                                Console.WriteLine("New Inventory Added to the file");
-                                DisplayInventory();
-
-                            }
-
+                            AddWheatInventoryData();
                             break;
 
                         case 3:
-
-                            /// creats list of inventory data from json object
-                            IList<InventoryManagement.InventoryData> pulses = Jsoninventory.Pulses;
-
-                            Console.WriteLine("Enter inventory name;");
-                            string pulsesType = Console.ReadLine();
-                            Console.WriteLine("Enter the weight");
-                            int pulsesWeight = Convert.ToInt32(Console.ReadLine());
-                            Console.WriteLine("Enter the price");
-                            double pulsesPrice = Convert.ToDouble(Console.ReadLine());
-
-                            if (Regex.IsMatch(pulsesType, @"^[a-zA-Z]+$"))
-                            {
-                                InventoryManagement.InventoryData inventory = new InventoryManagement.InventoryData()
-                                {
-                                    Name = pulsesType,
-                                    Weight = pulsesWeight,
-                                    Price = pulsesPrice,
-                                };
-                                pulses.Add(inventory);
-
-                                var convertedJson = JsonConvert.SerializeObject(Jsoninventory);
-                                reader.Close();
-                                File.WriteAllText(path.InventoryJsonfilePath, convertedJson);
-                                Console.WriteLine("New Inventory Added to the file");
-                                DisplayInventory();
-
-                            }
+                            AddPulsesInventoryData();
+                            
                             break;
                         default:
-                            Console.WriteLine("Invalid Selection...!");
+                            Console.WriteLine("Invalid Selection..Please Enter valid Option..!");
                             break;
                     }
 
-                } while (selectInventory != 3);
+                } while (SelectInventory<=0 && SelectInventory>3);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message)
             }
 
         }
+        //Add Data into Rice Inventory Data
+        public static void AddRiceInventoryData()
+        {
+            Console.WriteLine("Enter inventory name;");
+            string riceType = Console.ReadLine();
+            Console.WriteLine("Enter the weight");
+            int riceWeight = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the price");
+            double ricePrice = Convert.ToDouble(Console.ReadLine());
+            if (Regex.IsMatch(riceType, @"^[a-zA-Z]+$"))
+            {
+                InventoryManagement.InventoryData inventory = new InventoryManagement.InventoryData()
+                {
+                    Name = riceType,
+                    Weight = riceWeight,
+                    Price = ricePrice,
+                };
+                RiceArrayList.Add(inventory);
 
+                var convertedJson = JsonConvert.SerializeObject(JsonObject);
+                StreamReader.Close();
+                File.WriteAllText(JosonFilePath.InventoryJsonfilePath, convertedJson);
+                Console.WriteLine("New Inventory Added to the file");
+                DisplayInventory();
+            }
+        }
+
+        //Add Data into Wheat Inventory Data
+        public static void AddWheatInventoryData()
+        {
+
+            /// creats list of inventory data from json object
+            //IList<InventoryManagement.InventoryData> wheat = JsonObject.Wheat;
+
+            Console.WriteLine("Enter inventory name;");
+            string wheatType = Console.ReadLine();
+            Console.WriteLine("Enter the weight");
+            int wheatWeight = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the price");
+            double wheatPrice = Convert.ToDouble(Console.ReadLine());
+            if (Regex.IsMatch(wheatType, @"^[a-zA-Z]+$"))
+            {
+                InventoryManagement.InventoryData inventory = new InventoryManagement.InventoryData()
+                {
+                    Name = wheatType,
+                    Weight = wheatWeight,
+                    Price = wheatPrice,
+                };
+                wheat.Add(inventory);
+
+                var convertedJson = JsonConvert.SerializeObject(JsonObject);
+                StreamReader.Close();
+                File.WriteAllText(JosonFilePath.InventoryJsonfilePath, convertedJson);
+                Console.WriteLine("New Inventory Added to the file");
+                DisplayInventory();
+
+            }
+        }
+
+        //Add Data into Pulses Inventory Data
+        public static void AddPulsesInventoryData()
+        {
+
+            Console.WriteLine("Enter inventory name;");
+            string pulsesType = Console.ReadLine();
+            Console.WriteLine("Enter the weight");
+            int pulsesWeight = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the price");
+            double pulsesPrice = Convert.ToDouble(Console.ReadLine());
+
+            if (Regex.IsMatch(pulsesType, @"^[a-zA-Z]+$"))
+            {
+                InventoryManagement.InventoryData inventory = new InventoryManagement.InventoryData()
+                {
+                    Name = pulsesType,
+                    Weight = pulsesWeight,
+                    Price = pulsesPrice,
+                };
+                pulses.Add(inventory);
+
+                var convertedJson = JsonConvert.SerializeObject(JsonObject);
+                StreamReader.Close();
+                File.WriteAllText(JosonFilePath.InventoryJsonfilePath, convertedJson);
+                Console.WriteLine("New Inventory Added to the file");
+                DisplayInventory();
+
+            }
+        }
         /// <summary>
         /// Updates the inventory.
         /// </summary>
@@ -237,7 +241,7 @@ namespace Oops_Programms.InventoryManager
                     Console.WriteLine("Select the inventory:");
                     selectInventory = Convert.ToInt32(Console.ReadLine());
                     //reads data from json file
-                    ConstantClass path = new ConstantClass();
+                    Constant path = new Constant();
 
                     StreamReader reader = File.OpenText(path.InventoryJsonfilePath);
 
@@ -249,162 +253,18 @@ namespace Oops_Programms.InventoryManager
                     switch (selectInventory)
                     {
                         case 1:
-                           
-                            Console.WriteLine("Enter the rice type to update");
-                            string updateRiceType = Console.ReadLine();
-                            bool isUpdated = false;
-                            /// creats list of inventory data from json object
-                            IList<InventoryManagement.InventoryData> rice = Jsoninventory.Rice;
-
-                            // if(rice.Single(obj => obj["inventoryName"].Value<string>().Equals(updateRiceType)))
-                            for (int i = 0; i < rice.Count; i++)
-                            {
-                                var name = Jsoninventory.Rice[i].Name;
-
-
-                                if (name.Equals(updateRiceType))
-                                {
-                                    Console.WriteLine("Enter the field to update.\n 1.Update Rice type\n2.Update Weight\n3.Update Price\n ");
-                                    int fieldUpdate = Convert.ToInt32(Console.ReadLine());
-                                    switch (fieldUpdate)
-                                    {
-                                        case 1:
-                                            Console.WriteLine("Enter the new rice type");
-                                            string newRiceType = Console.ReadLine();
-                                            while (Regex.IsMatch(newRiceType, @"^[a-zA-Z]+$") && string.IsNullOrEmpty(newRiceType))
-                                            {
-                                                newRiceType = Console.ReadLine();
-                                            }
-                                            SaveInventoryName(path.InventoryJsonfilePath, updateRiceType);
-                                            isUpdated = true;
-                                            break;
-
-                                        case 2:
-                                            Console.WriteLine("Enter the new field weight of rice");
-                                            double newRiceWeight = Convert.ToDouble(Console.ReadLine());
-                                            //  bool regex =  Regex.IsMatch (newRiceWeight, @"^[0-9]*(?:\.[0-9]*)?$");
-                                            while (newRiceWeight.Equals(null))
-                                            {
-                                                Console.WriteLine("Cannot be null");
-                                                newRiceWeight = Convert.ToDouble(Console.ReadLine());
-                                            }
-                                            SaveInventoryWeight(path.InventoryJsonfilePath, newRiceWeight);
-                                            isUpdated = true;
-                                            break;
-
-                                        case 3:
-                                            Console.WriteLine("Enter the new field Price of rice");
-                                            double newRicePrice = Convert.ToInt32(Console.ReadLine());
-                                            while (newRicePrice.Equals(null))
-                                            {
-                                                Console.WriteLine("Cannot be null");
-                                                newRicePrice = Convert.ToDouble(Console.ReadLine());
-                                            }
-                                            SaveInventoryWeight(path.InventoryJsonfilePath, newRicePrice);
-                                            isUpdated = true;
-                                            break;
-
-                                    } while (fieldUpdate <= 0 && fieldUpdate > 3) ;
-                                }
-                                if(isUpdated == true)
-                                {
-                                    DisplayInventory();
-                                    break;
-                                }
-                            }
-
+                            UpdateRiceInventory();
                             break;
 
                         case 2:
-                            Console.WriteLine("Enter the Wheat type to update");
-                            string updateWheatType = Console.ReadLine();
-
-
-                            /// creats list of inventory data from json object
-                            IList<InventoryManagement.InventoryData> wheat = Jsoninventory.Rice;
-
-                            // if(rice.Single(obj => obj["inventoryName"].Value<string>().Equals(updateRiceType)))
-                            var Wheatname = Jsoninventory.Wheat[0].Name;
-                            if (Wheatname.Equals(updateWheatType))
-                            {
-                                Console.WriteLine("Enter the field to update.\n 1.Update wheat type\n2.Update Weight\n3.Update Price\n ");
-                                int fieldUpdate = Convert.ToInt32(Console.ReadLine());
-                                switch (fieldUpdate)
-                                {
-                                    case 1:
-                                        Console.WriteLine("Enter the new wheat type");
-                                        string newWheatType = Console.ReadLine();
-
-                                        while (Regex.IsMatch(newWheatType, @"^[a-zA-Z]+$") && string.IsNullOrEmpty(newWheatType))
-                                        {
-                                            newWheatType = Console.ReadLine();
-                                        }
-                                        SaveInventoryName(path.InventoryJsonfilePath, newWheatType);
-                                        break;
-
-                                    case 2:
-                                        Console.WriteLine("Enter the new field weight of rice");
-                                        double newWheatWeight = Convert.ToDouble(Console.ReadLine());
-                                        //  bool regex =  Regex.IsMatch (newRiceWeight, @"^[0-9]*(?:\.[0-9]*)?$");
-
-                                        SaveInventoryWeight(path.InventoryJsonfilePath, newWheatWeight);
-                                        break;
-
-                                    case 3:
-                                        Console.WriteLine("Enter the new field Price of rice");
-                                        double newWheatPrice = Convert.ToInt32(Console.ReadLine());
-
-                                        SaveInventoryWeight(path.InventoryJsonfilePath, newWheatPrice);
-                                        break;
-
-                                } while (fieldUpdate != 3) ;
-                            }
+                            
+                            UpdateWheatInventory();
                             break;
 
                         case 3:
-                            Console.WriteLine("Enter the Pulses type to update");
-                            string updatePulsesType = Console.ReadLine();
-
-                            /// creats list of inventory data from json object
-                            IList<InventoryManagement.InventoryData> pulses = Jsoninventory.Pulses;
-
-                            // if(rice.Single(obj => obj["inventoryName"].Value<string>().Equals(updateRiceType)))
-                            var pulsesName = Jsoninventory.Pulses[0].Name;
-                            if (pulsesName.Equals(updatePulsesType))
-                            {
-                                Console.WriteLine("Enter the field to update.\n 1.Update wheat type\n2.Update Weight\n3.Update Price\n ");
-                                int fieldUpdate = Convert.ToInt32(Console.ReadLine());
-                                switch (fieldUpdate)
-                                {
-                                    case 1:
-                                        Console.WriteLine("Enter the new Pulses type");
-                                        string newPulsesType = Console.ReadLine();
-
-                                        while (Regex.IsMatch(newPulsesType, @"^[a-zA-Z]+$") && string.IsNullOrEmpty(newPulsesType))
-                                        {
-                                            newPulsesType = Console.ReadLine();
-                                        }
-                                        SaveInventoryName(path.InventoryJsonfilePath, newPulsesType);
-                                        break;
-
-                                    case 2:
-                                        Console.WriteLine("Enter the new field weight of rice");
-                                        double newPulsesWeight = Convert.ToDouble(Console.ReadLine());
-                                        //  bool regex =  Regex.IsMatch (newRiceWeight, @"^[0-9]*(?:\.[0-9]*)?$");
-
-                                        SaveInventoryWeight(path.InventoryJsonfilePath, newPulsesWeight);
-                                        break;
-
-                                    case 3:
-                                        Console.WriteLine("Enter the new field Price of rice");
-                                        double newPulsesPrice = Convert.ToInt32(Console.ReadLine());
-
-                                        SaveInventoryWeight(path.InventoryJsonfilePath, newPulsesPrice);
-                                        break;
-
-                                } while (fieldUpdate != 3) ;
-                            }
-                            break;
+                            
+                            UpdatePulsesInventory();
+                        break;
                         default:
                             Console.WriteLine("Invalid Choice");
                             break;
@@ -418,7 +278,179 @@ namespace Oops_Programms.InventoryManager
             }
 
         }
-  
+
+        //Update Pulses Inventory
+        public static void UpdatePulsesInventory()
+        {
+            Console.WriteLine("Enter the Pulses type to update");
+            string updatePulsesType = Console.ReadLine();
+            bool isUpdated = false;
+
+            for (int i = 0; i < RiceArrayList.Count; i++)
+            {
+                var pulsesName = JsonObject.Pulses[i].Name;
+                if (pulsesName.Equals(updatePulsesType))
+                {
+                    Console.WriteLine("Enter the field to update.\n 1.Update wheat type\n2.Update Weight\n3.Update Price\n ");
+                    int fieldUpdate = Convert.ToInt32(Console.ReadLine());
+                    switch (fieldUpdate)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter the new Pulses type");
+                            string newPulsesType = Console.ReadLine();
+
+                            while (Regex.IsMatch(newPulsesType, @"^[a-zA-Z]+$") && string.IsNullOrEmpty(newPulsesType))
+                            {
+                                newPulsesType = Console.ReadLine();
+                            }
+                            SaveInventoryName(JosonFilePath.InventoryJsonfilePath, newPulsesType);
+                            break;
+
+                        case 2:
+                            Console.WriteLine("Enter the new field weight of rice");
+                            double newPulsesWeight = Convert.ToDouble(Console.ReadLine());
+                            //  bool regex =  Regex.IsMatch (newRiceWeight, @"^[0-9]*(?:\.[0-9]*)?$");
+
+                            SaveInventoryWeight(JosonFilePath.InventoryJsonfilePath, newPulsesWeight);
+                            break;
+
+                        case 3:
+                            Console.WriteLine("Enter the new field Price of rice");
+                            double newPulsesPrice = Convert.ToInt32(Console.ReadLine());
+
+                            SaveInventoryWeight(JosonFilePath.InventoryJsonfilePath, newPulsesPrice);
+                            break;
+
+                    } while (fieldUpdate != 3) ;
+                }
+                if (isUpdated == true)
+                {
+                    DisplayInventory();
+                    break;
+                }
+            }
+        }
+        //Update Rice Inventory
+        public static void UpdateWheatInventory()
+        {
+            Console.WriteLine("Enter the Wheat type to update");
+            string updateWheatType = Console.ReadLine();
+            bool isUpdated = false;
+            int SelectOption;
+
+            /// creats list of inventory data from json object
+            IList<InventoryManagement.InventoryData> wheat = JsonObject.Rice;
+
+            // if(rice.Single(obj => obj["inventoryName"].Value<string>().Equals(updateRiceType)))
+            for (int i = 0; i < RiceArrayList.Count; i++)
+            {
+                var Wheatname = JsonObject.Wheat[i].Name;
+
+                if (Wheatname.Equals(updateWheatType))
+                {
+                    Console.WriteLine("Enter the field to update.\n 1.Update wheat type\n2.Update Weight\n3.Update Price\n ");
+                    SelectOption = Convert.ToInt32(Console.ReadLine());
+                    switch (SelectOption)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter the new wheat type");
+                            string newWheatType = Console.ReadLine();
+
+                            while (Regex.IsMatch(newWheatType, @"^[a-zA-Z]+$") && string.IsNullOrEmpty(newWheatType))
+                            {
+                                newWheatType = Console.ReadLine();
+                            }
+                            SaveInventoryName(JosonFilePath.InventoryJsonfilePath, newWheatType);
+                            break;
+
+                        case 2:
+                            Console.WriteLine("Enter the new field weight of rice");
+                            double newWheatWeight = Convert.ToDouble(Console.ReadLine());
+                            //  bool regex =  Regex.IsMatch (newRiceWeight, @"^[0-9]*(?:\.[0-9]*)?$");
+
+                            SaveInventoryWeight(JosonFilePath.InventoryJsonfilePath, newWheatWeight);
+                            break;
+
+                        case 3:
+                            Console.WriteLine("Enter the new field Price of rice");
+                            double newWheatPrice = Convert.ToInt32(Console.ReadLine());
+
+                            SaveInventoryWeight(JosonFilePath.InventoryJsonfilePath, newWheatPrice);
+                            break;
+
+                    } while (SelectOption <= 0 && SelectOption > 3) ;
+                }
+                if (isUpdated == true)
+                {
+                    DisplayInventory();
+                    break;
+                }
+            }
+        }
+
+        //Update Rice Inventory
+        public static void UpdateRiceInventory()
+        {
+            Console.WriteLine("Enter the rice type to update");
+            string updateRiceType = Console.ReadLine();
+            bool isUpdated = false;
+
+            for (int i = 0; i < RiceArrayList.Count; i++)
+            {
+                var name = JsonObject.Rice[i].Name;
+
+
+                if (name.Equals(updateRiceType))
+                {
+                    Console.WriteLine("Enter the field to update.\n 1.Update Rice type\n2.Update Weight\n3.Update Price\n ");
+                    int SelectOption = Convert.ToInt32(Console.ReadLine());
+                    switch (SelectOption)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter the new rice type");
+                            string newRiceType = Console.ReadLine();
+                            while (Regex.IsMatch(newRiceType, @"^[a-zA-Z]+$") && string.IsNullOrEmpty(newRiceType))
+                            {
+                                newRiceType = Console.ReadLine();
+                            }
+                            SaveInventoryName(JosonFilePath.InventoryJsonfilePath, updateRiceType);
+                            isUpdated = true;
+                            break;
+
+                        case 2:
+                            Console.WriteLine("Enter the new field weight of rice");
+                            double newRiceWeight = Convert.ToDouble(Console.ReadLine());
+                            //  bool regex =  Regex.IsMatch (newRiceWeight, @"^[0-9]*(?:\.[0-9]*)?$");
+                            while (newRiceWeight.Equals(null))
+                            {
+                                Console.WriteLine("Cannot be null");
+                                newRiceWeight = Convert.ToDouble(Console.ReadLine());
+                            }
+                            SaveInventoryWeight(JosonFilePath.InventoryJsonfilePath, newRiceWeight);
+                            isUpdated = true;
+                            break;
+
+                        case 3:
+                            Console.WriteLine("Enter the new field Price of rice");
+                            double newRicePrice = Convert.ToInt32(Console.ReadLine());
+                            while (newRicePrice.Equals(null))
+                            {
+                                Console.WriteLine("Cannot be null");
+                                newRicePrice = Convert.ToDouble(Console.ReadLine());
+                            }
+                            SaveInventoryWeight(JosonFilePath.InventoryJsonfilePath, newRicePrice);
+                            isUpdated = true;
+                            break;
+
+                    } while (SelectOption <= 0 && SelectOption > 3) ;
+                }
+                if (isUpdated == true)
+                {
+                    DisplayInventory();
+                    break;
+                }
+            }
+        }
         /// <summary>
         /// Saves the name of the inventory.
         /// </summary>
@@ -561,7 +593,7 @@ namespace Oops_Programms.InventoryManager
                 Console.WriteLine("1.Rice\n 2.wheat\n3.Pulses\n");
                 int deleteInventory = Convert.ToInt32(Console.ReadLine());
 
-                ConstantClass path = new ConstantClass();
+                Constant path = new Constant();
 
                 switch (deleteInventory)
                 {
@@ -605,10 +637,10 @@ namespace Oops_Programms.InventoryManager
         public static void Delete(string path, string deleteType)
         {
             //// Used to read all data from the file
-            ConstantClass path1 = new ConstantClass();
+            Constant path1 = new Constant();
             
             Utility utility = new Utility();
-            var json = utility.FileReader(path1.InventoryJsonfilePath);
+            var json = Utility.FileReader(path1.InventoryJsonfilePath);
             
             try
             {

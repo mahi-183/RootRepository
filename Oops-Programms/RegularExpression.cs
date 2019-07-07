@@ -22,7 +22,7 @@ namespace Oops_Programms
             Console.WriteLine(stringExpression);
 
             ///regex exp for validating string name
-            Regex validatename = new Regex(@"^[a-zA-Z]+$");
+            Regex validateName = new Regex(@"^[a-zA-Z]+$");
 
             ///input for first name
             Console.WriteLine("Enter your first name");
@@ -40,13 +40,13 @@ namespace Oops_Programms
             Console.WriteLine("Enter your last name");
             string lastName = Console.ReadLine();
 
-            bool iflastname = validatename.IsMatch(lastName);
+            bool ifLastName = validateName.IsMatch(lastName);
             ///checks if input is empty and alphabets only
-            while (string.IsNullOrEmpty(lastName) || !iflastname)
+            while (string.IsNullOrEmpty(lastName) || !ifLastName)
             {
                 Console.WriteLine("Lastname cannot be empty and should be only alphabets,Please enter valid the last name");
                 lastName = Console.ReadLine();
-                iflastname = validatename.IsMatch(lastName);
+                ifLastName = validateName.IsMatch(lastName);
             }
             ///input for mobile number
             Console.WriteLine("Enter the mobile number");
@@ -59,14 +59,14 @@ namespace Oops_Programms
             ///checks if input is empty and 10 number digits only
             while (string.IsNullOrEmpty(mobileNo) || !ifno)
             {
-                Console.WriteLine("Mobile number cannot be empty or less than 10 digits ,Please enter the valid number");
+                Console.WriteLine("Mobile number cannot be empty or less than 10 digit(s), Please enter the valid number");
                 mobileNo = Console.ReadLine();
                 ifno = validaatenumber.IsMatch(mobileNo);
             }
 
             string Fullname = firstName + " " + lastName;
             ///replaces <<<name>>> to username and fullname
-            if (validatename.IsMatch(firstName))
+            if (validateName.IsMatch(firstName))
             {
                 stringExpression = stringExpression.Replace("<<name>>", firstName);
                 stringExpression = stringExpression.Replace("<<full name>>", Fullname);

@@ -16,7 +16,7 @@ namespace Oops_Programms
         {
             try
             {
-                int select;
+                int YesOrNo;
 
                 do
                 {
@@ -37,8 +37,7 @@ namespace Oops_Programms
                     switch (choice)
                     {
                         case 1:
-                            InventoryManagement.DisplayInventory inventorydisplay = new InventoryManagement.DisplayInventory();
-                            inventorydisplay.Display ();
+                            InventoryManager.InventoryManagerUtility.DisplayInventory ();
                             break;
 
                         case 2:
@@ -52,8 +51,8 @@ namespace Oops_Programms
                             break;
 
                         case 4:
-                            InventoryManager.InventoryManager invManager = new InventoryManager.InventoryManager();
-                            invManager.Manage();
+                            InventoryManager.InventoryManager InventoryManagerObj = new InventoryManager.InventoryManager();
+                            InventoryManagerObj.ManageInventory();
                             break;
 
                         case 5:
@@ -64,27 +63,27 @@ namespace Oops_Programms
                         case 6:
                         //    AddressBook addressBook = new AddressBook();
                         //    addressBook.Book();
-                        //    break;
+                            break;
 
-                        //case 7:
-                        //    DeckOfCards deckOfCards = new DeckOfCards();
-                        //    deckOfCards.Cards();
-                        //    break;
+                        case 7:
+                            DeckOfCards.DeckOfCard deckOfCards = new DeckOfCards.DeckOfCard();
+                            deckOfCards.Cards();
+                            break;
 
-                        //case 8:
-                        //    DeckOfCardsUsingQueue deckOfCardsUsingQueue = new DeckOfCardsUsingQueue();
-                        //    deckOfCardsUsingQueue.CardInQueue();
-                        //    break;
+                        case 8:
+                            DeckOfCards.DeckOfCardUsingQueue deckOfCardsUsingQueue = new DeckOfCards.DeckOfCardUsingQueue();
+                            deckOfCardsUsingQueue.Cards();
+                            break;
 
                         default:
                             Console.WriteLine("Invalid Choice..!!!");
                             break;
                     }
                     Console.WriteLine("Do you wants to continue...(Y/N)");
-                    select = Convert.ToChar(Console.ReadLine());
+                    YesOrNo = Convert.ToChar(Console.ReadLine());
 
 
-                } while (select == 'Y' || select == 'y');
+                } while (YesOrNo == 'Y' || YesOrNo == 'y');
 
             }
             catch (Exception e)

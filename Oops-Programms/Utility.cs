@@ -14,13 +14,14 @@ namespace Oops_Programms
     /// </summary>
     public class Utility
     {
-        public string FileReader(string path)
+        public static string FileReader(string path)
         {
-            StreamReader reader = File.OpenText(path);
-            string json = reader.ReadToEnd();
-            reader.Close();
+            StreamReader StreamReader = File.OpenText(path);
+            string json = StreamReader.ReadToEnd();
+            StreamReader.Close();
             return json;
         }
+
     }
     
 }
