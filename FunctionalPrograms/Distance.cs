@@ -12,6 +12,7 @@ namespace FunctionalPrograms
     /// <summary>
     /// Distance as class
     /// </summary>
+    /// changes i made...
    public class Distance
     {
         /// <summary>
