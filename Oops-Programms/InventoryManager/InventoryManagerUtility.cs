@@ -135,7 +135,7 @@ namespace Oops_Programms.InventoryManager
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message)
+                Console.WriteLine(e.Message);
             }
 
         }

@@ -24,21 +24,21 @@ namespace Oops_Programms.AddressBook
             switch (option)
             {
                 case "1":
-                    //// calling a method from address utility class
-                    //utilityAddress.NewEntry();
+                    ///calling a method from address utility class
+                    AddressBookUtility.NewEntry();
                     break;
 
                 case "2":
-                    //utilityAddress.DeleteEntry();
+                    AddressBookUtility.DeleteEntry();
                     break;
                 case "3":
-                    //utilityAddress.UpdateEntry();
+                    AddressBookUtility.UpdateEntry();
                     break;
                 case "4":
-                    //utilityAddress.SortByPin();
+                    //AddressBookUtility.SortByPin();
                     break;
                 case "5":
-                    utilityAddress.DisplayAddressBook();
+                    AddressBookUtility.DisplayAddressBook();
                     break;
             }
 

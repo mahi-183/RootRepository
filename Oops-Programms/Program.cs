@@ -61,8 +61,8 @@ namespace Oops_Programms
                             break;
 
                         case 6:
-                        //    AddressBook addressBook = new AddressBook();
-                        //    addressBook.Book();
+                            AddressBook.AddressBookMain addressBook = new AddressBook.AddressBookMain();
+                           addressBook.Book();
                             break;
 
                         case 7:

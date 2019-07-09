@@ -28,8 +28,4 @@ namespace Oops_Programms.AddressBook
         public string City { get; set; }
 
     }
-    public class AddressBookList
-    {
-        public List<AddressBookData> Person { get; set; }
-    }
 }
