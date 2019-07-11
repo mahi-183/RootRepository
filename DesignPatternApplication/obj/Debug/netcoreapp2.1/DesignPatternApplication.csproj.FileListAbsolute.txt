@@ -1,0 +1,11 @@
+E:\ProgrammeFile\C#programmes\DesignPatternApplication\DesignPatternApplication\bin\Debug\netcoreapp2.1\DesignPatternApplication.deps.json
+E:\ProgrammeFile\C#programmes\DesignPatternApplication\DesignPatternApplication\bin\Debug\netcoreapp2.1\DesignPatternApplication.runtimeconfig.json
+E:\ProgrammeFile\C#programmes\DesignPatternApplication\DesignPatternApplication\bin\Debug\netcoreapp2.1\DesignPatternApplication.runtimeconfig.dev.json
+E:\ProgrammeFile\C#programmes\DesignPatternApplication\DesignPatternApplication\bin\Debug\netcoreapp2.1\DesignPatternApplication.dll
+E:\ProgrammeFile\C#programmes\DesignPatternApplication\DesignPatternApplication\bin\Debug\netcoreapp2.1\DesignPatternApplication.pdb
+E:\ProgrammeFile\C#programmes\DesignPatternApplication\DesignPatternApplication\obj\Debug\netcoreapp2.1\DesignPatternApplication.csprojAssemblyReference.cache
+E:\ProgrammeFile\C#programmes\DesignPatternApplication\DesignPatternApplication\obj\Debug\netcoreapp2.1\DesignPatternApplication.csproj.CoreCompileInputs.cache
+E:\ProgrammeFile\C#programmes\DesignPatternApplication\DesignPatternApplication\obj\Debug\netcoreapp2.1\DesignPatternApplication.AssemblyInfoInputs.cache
+E:\ProgrammeFile\C#programmes\DesignPatternApplication\DesignPatternApplication\obj\Debug\netcoreapp2.1\DesignPatternApplication.AssemblyInfo.cs
+E:\ProgrammeFile\C#programmes\DesignPatternApplication\DesignPatternApplication\obj\Debug\netcoreapp2.1\DesignPatternApplication.dll
+E:\ProgrammeFile\C#programmes\DesignPatternApplication\DesignPatternApplication\obj\Debug\netcoreapp2.1\DesignPatternApplication.pdb
