@@ -38,11 +38,12 @@ namespace DesignPatternApplication.CreationalDesignPattern
                             break;
 
                         case 2:
-
+                            FactoryPattern.FactoryPatternInput.factoryPatternInput();
                             break;
 
                         case 3:
-
+                            PrototypePattern.ProtoTypeTest protoTypeTest = new PrototypePattern.ProtoTypeTest();
+                            protoTypeTest.Prototype();
                             break;
                             
                         default:

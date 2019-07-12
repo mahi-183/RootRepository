@@ -43,7 +43,8 @@ namespace DesignPatternApplication
                             break;
 
                         case 2:
-
+                            StructuralDesignPattern.StucturalDesignPattern StructuralDesing = new StructuralDesignPattern.StucturalDesignPattern();
+                            StructuralDesing.StructuralDesignPatternOperations();
                             break;
 
                         case 3:
