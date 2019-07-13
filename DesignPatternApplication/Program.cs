@@ -48,7 +48,8 @@ namespace DesignPatternApplication
                             break;
 
                         case 3:
-
+                            BehavioralDesignPattern.BehavioralDesignPattern behavioralDesignPattern = new BehavioralDesignPattern.BehavioralDesignPattern();
+                            behavioralDesignPattern.BehavioralDesignPatternOperations();
                             break;
 
                         default:

@@ -14,14 +14,19 @@ namespace DesignPatternApplication.StructuralDesignPattern.AdafterPattern
     /// <summary>
     /// adapter class calls GetVolts through socket adapter
     /// </summary>
-    class AdafterPattern
+    class AdafterPatternTest
     {
+        public void AdapterPatternTest()
+        {
+            testClassAdapter();
+            testObjectAdapter();
+        }
         /// <summary>
         /// Adapters this instance.
         /// </summary>
-        public void Adapter()
+        private void testClassAdapter()
         {
-            ISocketAdapter socketAdapter = new SocketAdafterImplement();
+            ISocketAdapter socketAdapter = new SocketClassAdapterImpl();
             Volt v3 = this.GetVolt(socketAdapter, 3);
             Volt v12 = this.GetVolt(socketAdapter, 12);
             Volt v120 = this.GetVolt(socketAdapter, 120);
@@ -30,6 +35,22 @@ namespace DesignPatternApplication.StructuralDesignPattern.AdafterPattern
             Console.WriteLine("V12 Volts using Class Adapter::" + v12.GetVolts());
             Console.WriteLine("V120 Volts using Class Adapter::" + v120.GetVolts());
             Console.WriteLine("Default Volts using Class Adapter::" + volt.GetVolts());
+        }
+
+        /// <summary>
+        /// Adapters this instance.
+        /// </summary>
+        private void testObjectAdapter()
+        {
+            ISocketAdapter socketAdapter = new SocketClassAdapterImpl();
+            Volt v3 = this.GetVolt(socketAdapter, 3);
+            Volt v12 = this.GetVolt(socketAdapter, 12);
+            Volt v120 = this.GetVolt(socketAdapter, 120);
+            Volt volt = this.GetVolt(socketAdapter, 0);
+            Console.WriteLine("V3 Volts using Object Adapter::" + v3.GetVolts());
+            Console.WriteLine("V12 Volts using Object Adapter::" + v12.GetVolts());
+            Console.WriteLine("V120 Volts using Object Adapter::" + v120.GetVolts());
+            Console.WriteLine("Default Volts using Object Adapter::" + volt.GetVolts());
         }
 
         /// <summary>

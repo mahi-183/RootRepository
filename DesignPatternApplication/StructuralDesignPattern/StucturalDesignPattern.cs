@@ -33,9 +33,8 @@ namespace DesignPatternApplication.StructuralDesignPattern
                     switch (SelectOption)
                     {
                         case 1:
-                            // SingltonPatternApproches.SingltonPtternOperations();
-                            AdafterPattern.AdafterPattern classAdapter = new AdafterPattern.AdafterPattern();
-                            classAdapter.Adapter();
+                            AdafterPattern.AdafterPatternTest classAdapter = new AdafterPattern.AdafterPatternTest();
+                            classAdapter.AdapterPatternTest(); ;
                             break;
 
                         case 2:
@@ -43,6 +42,8 @@ namespace DesignPatternApplication.StructuralDesignPattern
                             break;
 
                         case 3:
+                            ProxyPattern.ProxyPatterMain proxyPattern = new ProxyPattern.ProxyPatterMain();
+                            proxyPattern.ProxyPatternInput();
                             break;
 
                         default:

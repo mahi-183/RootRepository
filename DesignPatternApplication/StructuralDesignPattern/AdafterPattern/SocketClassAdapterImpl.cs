@@ -16,7 +16,7 @@ namespace DesignPatternApplication.StructuralDesignPattern.AdafterPattern
     /// </summary>
     /// <seealso cref="DesignPattern.AdapterPattern.Socket" />
     /// <seealso cref="DesignPattern.AdapterPattern.ISocketAdapter" />
-    class SocketAdafterImplement :  Socket, ISocketAdapter
+    class SocketClassAdapterImpl :  Socket, ISocketAdapter
     {
         public Volt Get120Volt()
         {

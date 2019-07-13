@@ -10,12 +10,12 @@ namespace DesignPatternApplication.StructuralDesignPattern.FecadePattern
     public class Facade
     {
         private ReadAdressBook addressBook;
-        private AddAdress addAdress;
+        private AddAdressBookData addAdress;
 
         public Facade()
         {
             this.addressBook = new ReadAdressBook();
-            this.addAdress = new AddAdress();
+            this.addAdress = new AddAdressBookData();
         }
 
         public void ViewAddressBook()

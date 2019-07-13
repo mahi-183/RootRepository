@@ -11,7 +11,7 @@ namespace DesignPatternApplication.StructuralDesignPattern.FecadePattern
     /// <summary>
     /// class to add address to file
     /// </summary>
-    public class AddAdress
+    public class AddAdressBookData
     {
         /// <summary>
         /// Gets or sets the name.
@@ -51,7 +51,7 @@ namespace DesignPatternApplication.StructuralDesignPattern.FecadePattern
         /// <value>
         /// The pin.
         /// </value>
-        public int Pin { get; set; }
+        public string Pin { get; set; }
 
         /// <summary>
         /// Addd the details.
@@ -60,7 +60,7 @@ namespace DesignPatternApplication.StructuralDesignPattern.FecadePattern
         {
             try
             {
-                AddAdress addAdress = new AddAdress();
+                AddAdressBookData addAdress = new AddAdressBookData();
 
                 string path = @"..\..\..\Addressbook.txt";
                 using (FileStream file = new FileStream(path, FileMode.Append))
@@ -68,56 +68,56 @@ namespace DesignPatternApplication.StructuralDesignPattern.FecadePattern
                 {
                     Console.WriteLine("Enter Full name");
                     string name = Console.ReadLine();
-                    bool ifName = Regex.IsMatch(name, @"^[a-zA-Z]+$");
-                    while (string.IsNullOrEmpty(name) || !ifName)
+                    bool IsNameMathOrNot = Regex.IsMatch(name, @"^[a-zA-Z]+$");
+                    while (string.IsNullOrEmpty(name) || !IsNameMathOrNot)
                     {
                         Console.WriteLine("Name cannot be empty and should be only alphabets,Please enter the valid full name");
                         name = Console.ReadLine();
-                        ifName = Regex.IsMatch(name, @"^[a-zA-Z]+$");
+                        IsNameMathOrNot = Regex.IsMatch(name, @"^[a-zA-Z]+$");
                     }
 
                     Console.WriteLine("Enter Address");
                     string address = Console.ReadLine();
-                    bool ifAddress = Regex.IsMatch(name, @"^[a-zA-Z0-9]+$");
-                    while (string.IsNullOrEmpty(address) || !ifAddress)
+                    bool IsAddressMatchOrNot = Regex.IsMatch(address, @"^[a-zA-Z0-9 ]+$");
+                    while (string.IsNullOrEmpty(address) || !IsAddressMatchOrNot)
                     {
                         Console.WriteLine("Address cannot be empty and should be only alphabets,Please enter the valid address");
-                        name = Console.ReadLine();
-                        ifName = Regex.IsMatch(address, @"^[a-zA-Z0-9]+$");
+                        address = Console.ReadLine();
+                        IsAddressMatchOrNot = Regex.IsMatch(address, @"^[a-zA-Z0-9 ]+$");
                     }
 
                     Console.WriteLine("Enter State");
                     string state = Console.ReadLine();
-                    bool ifState = Regex.IsMatch(name, @"^[a-zA-Z]+$");
-                    while (string.IsNullOrEmpty(state) || !ifState)
+                    bool IsStateMatchOrNot = Regex.IsMatch(state, @"^[a-zA-Z]+$");
+                    while (string.IsNullOrEmpty(state) || !IsStateMatchOrNot)
                     {
                         Console.WriteLine("state cannot be empty and should be only alphabets,Please enter valid the state");
-                        name = Console.ReadLine();
-                        //// ifState = Regex.IsMatch(state, @"^[a-zA-Z]+$");
+                        state = Console.ReadLine();
+                        IsStateMatchOrNot = Regex.IsMatch(state, @"^[a-zA-Z]+$");
                     }
 
                     Console.WriteLine("Enter city");
                     string city = Console.ReadLine();
-                    bool ifCity = Regex.IsMatch(name, @"^[a-zA-Z]+$");
-                    while (string.IsNullOrEmpty(city) || !ifCity)
+                    bool IsCityMatchOrNot = Regex.IsMatch(city, @"^[a-zA-Z]+$");
+                    while (string.IsNullOrEmpty(city) || !IsCityMatchOrNot)
                     {
                         Console.WriteLine("city cannot be empty and should be only alphabets,Please enter valid city");
-                        name = Console.ReadLine();
-                        ////   ifCity = Regex.IsMatch(city, @"^[a-zA-Z]+$");
+                        city = Console.ReadLine();
+                        IsCityMatchOrNot = Regex.IsMatch(city, @"^[a-zA-Z]+$");
                     }
 
                     Console.WriteLine("Enter city pin");
-                    int pin = Convert.ToInt32(Console.ReadLine());
-                    bool ifPin = Regex.IsMatch(name, @"^[0-9]+$");
-                    //// while (pin == null || !ifPin)
-                    ////{
-                    ////    Console.WriteLine("Pin cannot be empty and should be only numbers,Please enter valid pin");
-                    ////    pin = Convert.ToInt32(Console.ReadLine());
-                    ////    ifPin = Regex.IsMatch(name, @"^[0-9]+$");
-                    ////   }
+                    string pin = Console.ReadLine();
+                    bool IsPinMatchOrNot = Regex.IsMatch(pin, @"^[0-9]+$");
+                    while (pin == null || !IsPinMatchOrNot)
+                    {
+                        Console.WriteLine("Pin cannot be empty and should be only numbers,Please enter valid pin");
+                        pin = Console.ReadLine();
+                        IsPinMatchOrNot = Regex.IsMatch(name, @"^[0-9]+$");
+                    }
 
                     addAdress.Name = name;
-                    addAdress.Address = name;
+                    addAdress.Address = address;
                     addAdress.State = state;
                     addAdress.City = city;
                     addAdress.Pin = pin;

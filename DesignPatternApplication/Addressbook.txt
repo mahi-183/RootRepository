@@ -4,3 +4,13 @@ Address: pune
 state: maharashtra
 city: mumbai
 Pin: 3214223
+Name: Raj 
+Address: 239
+state: 21
+city: pune@
+Pin: 12345
+Name: Pratiksha 
+Address: Negi niwas 102
+state: Maharashtra
+city: Mumbai
+Pin: 12345
