@@ -1,25 +1,24 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Socket.cs" company="Bridgelabz">
+// <copyright file="Text.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
-// <creator name="Mahesh Aurad"/>
+// <creator name="Mahesh Aurad "/>
 // --------------------------------------------------------------------------------------------------------------------
-namespace DesignPatternApplication.StructuralDesignPattern.AdafterPattern
+
+namespace DesignPatternApplication.DependencyInjection
 {
     using System;
+    using System.Collections.Generic;
+    using System.Text;
 
     /// <summary>
-    /// socket class with details
+    /// ITextInterface as interface
     /// </summary>
-    class Socket
+    public interface ITextInterface
     {
         /// <summary>
-        // Gets the volts.
+        /// Display as function
         /// </summary>
-        /// <returns>volt.</returns>
-        public Volt GetVolts()
-        {
-            return new Volt(120);
-        }
+        void Display();
     }
 }

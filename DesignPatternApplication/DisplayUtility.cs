@@ -62,18 +62,14 @@ namespace DesignPatternApplication.CreationalDesignPattern
         ///ThreadSafeInitialization Display method
         public static void ThreadSafeInitializationDisplay()
         {
-            SingltonPattern.ThreadSafeSinglton ThreadInstance = SingltonPattern.ThreadSafeSinglton.getInstance();
-            SingltonPattern.ThreadSafeSinglton ThreadInstance1 = SingltonPattern.ThreadSafeSinglton.getInstance();
-            SingltonPattern.ThreadSafeSinglton ThreadInstance2 = SingltonPattern.ThreadSafeSinglton.getInstance();
-            //Console.WriteLine("FirstInstance {0} \n SecondInstance {1} \n ThirdInstance {2}", ThreadInstance.GetHashCode(), ThreadInstance.GetHashCode(), ThreadInstance.GetHashCode());
-            if (ThreadInstance == ThreadInstance1)
+            SingltonPattern.ThreadSafeSinglton threadInstance = SingltonPattern.ThreadSafeSinglton.getInstance();
+            SingltonPattern.ThreadSafeSinglton threadInstance1 = SingltonPattern.ThreadSafeSinglton.getInstance();
+            SingltonPattern.ThreadSafeSinglton threadInstance2 = SingltonPattern.ThreadSafeSinglton.getInstance();
+            if (threadInstance == threadInstance1)
             {
                 Console.WriteLine("All Instances are refering same objects");
             }
 
         }
-
     }
-
-
 }

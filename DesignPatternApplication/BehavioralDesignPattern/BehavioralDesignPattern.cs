@@ -4,34 +4,29 @@
 // </copyright>
 // <creator name="Aurad mahesh "/>
 // --------------------------------------------------------------------------------------------------------------------
-
-
 namespace DesignPatternApplication.BehavioralDesignPattern
 {
     using System;
-    
+
     /// <summary>
-    /// 
+    /// BehavioralDesignPattern Operations
     /// </summary>
-    class BehavioralDesignPattern
+    public class BehavioralDesignPattern
     {
+        /// The opration of the Behavioral Design Pattern 
         public void BehavioralDesignPatternOperations()
         {
             try
             {
-                int SelectOption = 0;
-
+                int selectOption = 0;
                 do
                 {
                     Console.WriteLine("Select the Option for following Pattern:");
-                    Console.WriteLine("1. Observer Pattern " +
-                                      "\n2. Visitor Pattern " +
-                                      "\n3. Mediator Design Pattern "
-                                      );
+                    Console.WriteLine("1. Observer Pattern \n2. Visitor Pattern \n3. Mediator Design Pattern ");
 
-                    SelectOption = Convert.ToInt32(Console.ReadLine());
+                    selectOption = Convert.ToInt32(Console.ReadLine());
 
-                    switch (SelectOption)
+                    switch (selectOption)
                     {
                         case 1:
                             OberverDesignPattern.ObesrverDesignPatternMain obesrverDesignPatternMain = new OberverDesignPattern.ObesrverDesignPatternMain();
@@ -44,8 +39,8 @@ namespace DesignPatternApplication.BehavioralDesignPattern
                             break;
 
                         case 3:
-                            //PrototypePattern.ProtoTypeTest protoTypeTest = new PrototypePattern.ProtoTypeTest();
-                           // protoTypeTest.Prototype();
+                            MediatorDesignPattern.MediatiorDesignPatternMain mediatorPattern = new MediatorDesignPattern.MediatiorDesignPatternMain();
+                            mediatorPattern.MediatorPattern();
                             break;
 
                         default:
@@ -54,17 +49,12 @@ namespace DesignPatternApplication.BehavioralDesignPattern
                             Console.WriteLine(" Please ReEnter the SelectOption :");
                             break;
                     }
-                } while (SelectOption <= 0 && SelectOption > 3);
-
-
+                } while (selectOption <= 0 && selectOption > 3);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
         }
-
-
     }
 }

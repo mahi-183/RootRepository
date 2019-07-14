@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="StructuralDesignPattern.cs" company="Bridgelabz">
+// <copyright file="AdafterPatternTest.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="Mahesh Aurad "/>
@@ -14,17 +14,21 @@ namespace DesignPatternApplication.StructuralDesignPattern.AdafterPattern
     /// <summary>
     /// adapter class calls GetVolts through socket adapter
     /// </summary>
-    class AdafterPatternTest
+    public class AdafterPatternTest
     {
+        /// <summary>
+        /// The AdapterPatternTest method is calling the TestClassAdapter method and TestObjectAdapter 
+        /// </summary>
         public void AdapterPatternTest()
         {
-            testClassAdapter();
-            testObjectAdapter();
+            this.TestClassAdapter();
+            this.TestObjectAdapter();
         }
+
         /// <summary>
         /// Adapters this instance.
         /// </summary>
-        private void testClassAdapter()
+        private void TestClassAdapter()
         {
             ISocketAdapter socketAdapter = new SocketClassAdapterImpl();
             Volt v3 = this.GetVolt(socketAdapter, 3);
@@ -40,7 +44,7 @@ namespace DesignPatternApplication.StructuralDesignPattern.AdafterPattern
         /// <summary>
         /// Adapters this instance.
         /// </summary>
-        private void testObjectAdapter()
+        private void TestObjectAdapter()
         {
             ISocketAdapter socketAdapter = new SocketClassAdapterImpl();
             Volt v3 = this.GetVolt(socketAdapter, 3);
@@ -58,7 +62,7 @@ namespace DesignPatternApplication.StructuralDesignPattern.AdafterPattern
         /// </summary>
         /// <param name="socketAdapter">The socket adapter.</param>
         /// <param name="i">The i.</param>
-        /// <returns>i</returns>
+        /// <returns>Volts.</returns>
         private Volt GetVolt(ISocketAdapter socketAdapter, int i)
         {
             switch (i)

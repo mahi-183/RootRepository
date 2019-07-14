@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="SocketAdafterImplement.cs" company="Bridgelabz">
+// <copyright file="SocketAdafterImpl.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="Mahesh Aurad"/>
@@ -16,8 +16,9 @@ namespace DesignPatternApplication.StructuralDesignPattern.AdafterPattern
     /// </summary>
     /// <seealso cref="DesignPattern.AdapterPattern.Socket" />
     /// <seealso cref="DesignPattern.AdapterPattern.ISocketAdapter" />
-    class SocketClassAdapterImpl :  Socket, ISocketAdapter
+    class SocketClassAdapterImpl : Socket, ISocketAdapter
     {
+        /// Get120Volt method is for getting the 120v
         public Volt Get120Volt()
         {
             return this.GetVolts();

@@ -18,23 +18,20 @@ namespace DesignPatternApplication.StructuralDesignPattern
         {
             try
             {
-                int SelectOption = 0;
+                int selectOption = 0;
 
                 do
                 {
                     Console.WriteLine("Select the Option for following Pattern:");
-                    Console.WriteLine("1. Adapter Design Pattern " +
-                                      "\n2. Facade Design Pattern " +
-                                      "\n3. Proxy Design Pattern "
-                                      );
+                    Console.WriteLine("1. Adapter Design Pattern \n2. Facade Design Pattern \n3. Proxy Design Pattern ");
 
-                    SelectOption = Convert.ToInt32(Console.ReadLine());
+                    selectOption = Convert.ToInt32(Console.ReadLine());
 
-                    switch (SelectOption)
+                    switch (selectOption)
                     {
                         case 1:
                             AdafterPattern.AdafterPatternTest classAdapter = new AdafterPattern.AdafterPatternTest();
-                            classAdapter.AdapterPatternTest(); ;
+                            classAdapter.AdapterPatternTest();
                             break;
 
                         case 2:
@@ -52,15 +49,12 @@ namespace DesignPatternApplication.StructuralDesignPattern
                             Console.WriteLine(" Please ReEnter the SelectOption :");
                             break;
                     }
-                } while (SelectOption <= 0 && SelectOption > 3);
-
-
+                } while (selectOption <= 0 && selectOption > 3);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
         }
     }
 }
