@@ -1,0 +1,9 @@
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\BusinessManager\bin\Debug\netstandard2.0\BusinessManager.deps.json
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\BusinessManager\bin\Debug\netstandard2.0\BusinessManager.dll
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\BusinessManager\bin\Debug\netstandard2.0\BusinessManager.pdb
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\BusinessManager\obj\Debug\netstandard2.0\BusinessManager.csprojAssemblyReference.cache
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\BusinessManager\obj\Debug\netstandard2.0\BusinessManager.csproj.CoreCompileInputs.cache
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\BusinessManager\obj\Debug\netstandard2.0\BusinessManager.AssemblyInfoInputs.cache
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\BusinessManager\obj\Debug\netstandard2.0\BusinessManager.AssemblyInfo.cs
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\BusinessManager\obj\Debug\netstandard2.0\BusinessManager.dll
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\BusinessManager\obj\Debug\netstandard2.0\BusinessManager.pdb

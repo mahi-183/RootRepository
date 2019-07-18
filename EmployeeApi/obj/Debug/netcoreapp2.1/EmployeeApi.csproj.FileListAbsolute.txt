@@ -1,0 +1,14 @@
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\bin\Debug\netcoreapp2.1\EmployeeApi.deps.json
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\bin\Debug\netcoreapp2.1\EmployeeApi.runtimeconfig.json
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\bin\Debug\netcoreapp2.1\EmployeeApi.runtimeconfig.dev.json
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\bin\Debug\netcoreapp2.1\EmployeeApi.dll
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\obj\Debug\netcoreapp2.1\EmployeeApi.csprojAssemblyReference.cache
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\obj\Debug\netcoreapp2.1\EmployeeApi.csproj.CoreCompileInputs.cache
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\obj\Debug\netcoreapp2.1\EmployeeApi.RazorAssemblyInfo.cache
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\obj\Debug\netcoreapp2.1\EmployeeApi.RazorAssemblyInfo.cs
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\obj\Debug\netcoreapp2.1\EmployeeApi.AssemblyInfoInputs.cache
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\obj\Debug\netcoreapp2.1\EmployeeApi.AssemblyInfo.cs
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\obj\Debug\netcoreapp2.1\EmployeeApi.RazorTargetAssemblyInfo.cache
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\bin\Debug\netcoreapp2.1\EmployeeApi.pdb
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\obj\Debug\netcoreapp2.1\EmployeeApi.dll
+E:\ProgrammeFile\C#programmes\FifthWeekTask\EmployeeManagementSystem\EmployeeApi\obj\Debug\netcoreapp2.1\EmployeeApi.pdb
